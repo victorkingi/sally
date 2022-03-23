@@ -21,7 +21,7 @@ class complexFSM:
     
         
     def run(self, cargo):
-        print(self.state, "-> ", end="")
+        print("->", self.state, "-> ", end="")
         while True:
             if len(cargo) > 0:
                 # Get next char & remove it from string
@@ -33,18 +33,19 @@ class complexFSM:
                         # Token is valid, jump to next state
                         self.state = tn.next_state
                         found = True
-                        if len(cargo) > 0:
-                            print(self.state, "-> ", end="")
-                        else:
-                            print(self.state)
+                        print(self.state, "-> ", end="")
                         break
                 
                 if not found:
-                    print(self.state)
+                    print("INVALID INPUT")
                     break
                 
             else:
-                break
+                if self.state.endswith('*'):
+                    break
+                else:
+                    print("INVALID END STATE")
+                    break
                 
 
 
@@ -58,4 +59,4 @@ fsm.add_state("SECOND_DIGIT_ONWARDS*", ".", "AFTER_DOT")
 fsm.add_state("AFTER_DOT", "0123456789", "MANTISSA*")
 fsm.add_state("MANTISSA*", "0123456789", "MANTISSA*")
 
-fsm.run("-22.a0")
+fsm.run("-34.0A")

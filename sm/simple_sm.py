@@ -1,4 +1,5 @@
 def state_start_handler(cargo):
+    print("-> START -> ", end="")
     return ("RED", cargo)
 
 def state_red_handler(cargo):
