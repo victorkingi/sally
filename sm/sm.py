@@ -39,7 +39,7 @@ class myFSM:
             handler = self.handlers[newState]
 
 
-fsm = myFSM()g
+fsm = myFSM()
 fsm.add_state("START", state_start_handler)
 
 fsm.add_state("RED", state_red_handler)
@@ -47,4 +47,4 @@ fsm.add_state("RED_AMBER", state_red_amber_handler)
 fsm.add_state("GREEN", state_green_handler)
 fsm.add_state("AMBER", state_amber_handler)
 
-fsm.run("END", 3)
+fsm.run("START", 1)
