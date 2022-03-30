@@ -1,3 +1,5 @@
+# Simple state machine implementation of how a traffic light system works
+
 def state_start_handler(cargo):
     print("-> START -> ", end="")
     return ("RED", cargo)
