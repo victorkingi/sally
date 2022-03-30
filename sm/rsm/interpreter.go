@@ -30,7 +30,7 @@ const (
 )
 
 type stack struct {
-	lock sync.Mutex // you don't have to do this if you don't want thread safety
+	lock sync.Mutex
 	s    []int
 }
 
@@ -59,18 +59,18 @@ func (s *stack) Pop() (int, error) {
 	return res, nil
 }
 
-func push(x int) (Opcode, int, bool) { return PUSH, x, true }
-func add() (Opcode, int, bool) { return ADD, 0, true }
-func sub() (Opcode, int, bool) { return SUB, 0, true }
-func mul() (Opcode, int, bool) { return MUL, 0, true }
-func div() (Opcode, int, bool) { return DIV, 0, true }
-func mod() (Opcode, int, bool) { return MOD, 0, true }
-func and() (Opcode, int, bool) { return AND, 0, true }
-func or() (Opcode, int, bool)  { return OR, 0, true }
-func xor() (Opcode, int, bool) { return XOR, 0, true }
-func lshift() (Opcode, int, bool) { return LSHIFT, 0, true }
-func rshift() (Opcode, int, bool) { return RSHIFT, 0, true }
-func dump() (Opcode, int, bool) { return DUMP, 0, true }
+func push(x int) (Opcode, int) { return PUSH, x }
+func add() (Opcode, int) { return ADD, 0 }
+func sub() (Opcode, int) { return SUB, 0 }
+func mul() (Opcode, int) { return MUL, 0 }
+func div() (Opcode, int) { return DIV, 0 }
+func mod() (Opcode, int) { return MOD, 0 }
+func and() (Opcode, int) { return AND, 0 }
+func or() (Opcode, int)  { return OR, 0 }
+func xor() (Opcode, int) { return XOR, 0 }
+func lshift() (Opcode, int) { return LSHIFT, 0 }
+func rshift() (Opcode, int) { return RSHIFT, 0 }
+func dump() (Opcode, int) { return DUMP, 0 }
 
 func runCode(program []struct{Opcode; int; bool}) (int, error) {
 	stack := NewStack()
@@ -188,6 +188,8 @@ func runCode(program []struct{Opcode; int; bool}) (int, error) {
 			panic("Unreachable case")
 		}
 	}
+	// at this stage the stack should contain only one element since all operations
+	// where successful
 	ans, err := stack.Pop()
 	if err != nil {
 		return 0, err
