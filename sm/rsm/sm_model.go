@@ -2,11 +2,9 @@ package main
 
 import (
 	"crypto/sha256"
-	"encoding/hex"
 	"errors"
 	"fmt"
-	"hex"
-	"strings"
+	"encoding/hex"
 	"sync"
 )
 
@@ -98,7 +96,7 @@ func (s *StateMachine) SendEvent(event EventType, eventCtx EventContext) error {
 	// Determine the next state for the event given the machine's current state.
 	nextState, err := s.getNextState(event)
 	if err != nil {
-			return ErrEventRejected
+		return ErrEventRejected
 	}
 
 	// Transition over to the next state.
