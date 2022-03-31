@@ -9,7 +9,6 @@ import (
 	"strconv"
 	"strings"
 	"time"
-
 	"github.com/rs/xid"
 )
 
@@ -23,13 +22,12 @@ type Instruction struct {
 	Data   int
 }
 
+var GlobalStateHash string    // This represents the state hash of the whole rsm after consensus was reached
+
 type Event struct {
 	timestamp int64
 	Instructions []Instruction
 }
-
-var Log []Event //This stores all events ever executed, if a new node connects, executing all these events
-						// should get it to the current state
 
 func contains(s []Event, e int64) bool {
 	for _, a := range s {
@@ -69,8 +67,8 @@ func (s *server) getState(c *client) {
 }
 
 func (s *server) getLog(c *client) {
-	c.msg(fmt.Sprintf("Size of log: %d", len(Log)))
-	c.msg(fmt.Sprint("LOG", Log))
+	c.msg(fmt.Sprintf("Size of log: %d", len(c.log)))
+	c.msg(fmt.Sprint("LOG", c.log))
 }
 
 func (s *server) nodes(c *client) {
@@ -95,6 +93,8 @@ func (s *server) newClient(conn net.Conn) *client {
 		commands: s.commands,
 		currentState: 0,
 		stateHash: "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9", // sha256 of 0
+		confirmations: 0,
+		knownNodesState: make(map[string]string, 0),
 	}
 }
 
@@ -114,8 +114,6 @@ func (s *server) join(c *client) {
 	c.table = r
 
 	r.broadcast(c, fmt.Sprintf("node id: %s connected", c.nick))
-
-	c.msg("Node successfully synced")
 }
 
 func (s *server) sanitizeArg(msg []string) ([]Instruction, error) {
@@ -222,21 +220,22 @@ func (s *server) msg(c *client, args []string) {
 		return
 	}
 	c.table.broadcast(c, "EXECUTE!!"+string(out)+"!!"+c.nick+"!!"+fmt.Sprint(nowNano))
-	event := Event{timestamp: nowNano, Instructions: code}
-	Log = append(Log, event)
-	jsonLog, err := json.Marshal(Log)
-	if err != nil {
-		fmt.Println("error parsing json", err)
-		return
-	}
-	c.table.broadcast(c, "UPDATE!!"+string(jsonLog))
 	newState, err := c.runCode(code)
 	if err != nil {
 		c.msg("Execution failed: " + err.Error())
 		return
 	}
 	c.msg("Execution result: " + fmt.Sprint(newState))
-	c.sendState()
+	event := Event{timestamp: nowNano, Instructions: code}
+	log := append(c.log, event)
+	jsonLog, err := json.Marshal(log)
+	if err != nil {
+		fmt.Println("error parsing json", err)
+		return
+	}
+	c.table.broadcast(c, "UPDATE!!"+string(jsonLog))
+	c.setState()
+	c.log = log
 }
 
 func (s *server) quit(c *client) {

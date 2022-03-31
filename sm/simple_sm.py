@@ -1,28 +1,28 @@
 # Simple state machine implementation of how a traffic light system works
 
-def state_start_handler(cargo):
+def state_start_handler(iterations_to_run):
     print("-> START -> ", end="")
-    return ("RED", cargo)
+    return ("RED", iterations_to_run)
 
-def state_red_handler(cargo):
+def state_red_handler(iterations_to_run):
     print("RED -> ", end="")
-    return ("RED_AMBER", cargo)
+    return ("RED_AMBER", iterations_to_run)
 
-def state_red_amber_handler(cargo):
+def state_red_amber_handler(iterations_to_run):
     print("RED & AMBER -> ", end="")
-    return ("GREEN", cargo)
+    return ("GREEN", iterations_to_run)
 
-def state_green_handler(cargo):
+def state_green_handler(iterations_to_run):
     print("GREEN -> ", end="")
-    return ("AMBER", cargo)
+    return ("AMBER", iterations_to_run)
 
-def state_amber_handler(cargo):
+def state_amber_handler(iterations_to_run):
     print("AMBER -> ", end="")
-    cargo = cargo - 1
-    if cargo > 0:
-        return ("RED", cargo)
+    iterations_to_run = iterations_to_run - 1
+    if iterations_to_run > 0:
+        return ("RED", iterations_to_run)
     else:
-        return ("END", cargo)
+        return ("END", iterations_to_run)
 
 
 class simpleFSM:
@@ -32,10 +32,10 @@ class simpleFSM:
     def add_state(self, name, handler):
         self.handlers[name] = handler
         
-    def run(self, startingState, cargo):
+    def run(self, startingState, iterations_to_run):
         handler = self.handlers[startingState]
         while True:
-            (newState, cargo) = handler(cargo)
+            (newState, iterations_to_run) = handler(iterations_to_run)
             if newState == "END":
                 print("END")
                 break

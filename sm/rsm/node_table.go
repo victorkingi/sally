@@ -12,7 +12,7 @@ type table struct {
 func (r *table) broadcast(sender *client, msg string) {
 	for addr, m := range r.members {
 		if sender.conn.RemoteAddr() != addr {
-			m.msg(msg)
+				m.msg(msg)
 		}
 	}
 }
