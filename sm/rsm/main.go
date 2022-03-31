@@ -35,7 +35,7 @@ func main() {
 			i := 0
 			for {
 				time.Sleep(1 * time.Second)
-				c.table.broadcast(c, "STATE!!"+c.stateHash+"!!"+c.nick) // broadcast new state to all nodes
+				c.table.broadcast(c, "STATE!!"+c.stateHash+"!!"+c.nick) // broadcast state to all nodes
 				if i%20 == 0 {
 					fmt.Println(c.conn.RemoteAddr(), "state:", c.stateHash)
 				}
@@ -60,6 +60,7 @@ func main() {
 				// 3f + 1 rule will be used to reach consensus
 				if len(c.table.members) > (3*(len(c.table.members)-confirmations)+1) || (len(c.table.members) == 3 && confirmations == 2) {
 					if j % 5 == 0 {
+						// slow down number of times this is printed, give user time to enter more commands
 						c.msg("CONSENSUS REACHED FOR EPOCH: " + fmt.Sprint(epoch))
 					}
 					epoch += 1
