@@ -1,23 +1,46 @@
 package main
 
 import (
+	"encoding/json"
+	"errors"
 	"fmt"
 	"log"
 	"net"
+	"strconv"
 	"strings"
+	"time"
 
 	"github.com/rs/xid"
 )
 
 type server struct {
-	rooms    map[string]*room
-	commands chan command
+	nodeTable map[string]*table
+	commands  chan command
+}
+
+type Instruction struct {
+	Opcode Opcode
+	Data   int
+}
+
+type Instructions []Instruction
+
+var Log []Instructions //This stores all events ever executed, if a new node connects, executing all these events
+						// should get it to the current state
+
+func contains(s []Instructions, e int64) bool {
+	for _, a := range s {
+		if a == e {
+			return true
+		}
+	}
+	return false
 }
 
 func newServer() *server {
 	return &server{
-		rooms:    make(map[string]*room),
-		commands: make(chan command),
+		nodeTable: make(map[string]*table),
+		commands:  make(chan command),
 	}
 }
 
@@ -28,18 +51,30 @@ func (s *server) run() {
 			s.msg(cmd.client, cmd.args)
 		case CMD_ACTIVE:
 			s.nodes(cmd.client)
+		case CMD_STATE:
+			s.getState(cmd.client)
+		case CMD_LOG:
+			s.getLog(cmd.client)
 		case CMD_QUIT:
 			s.quit(cmd.client)
 		}
 	}
 }
 
+func (s *server) getState(c *client) {
+	c.msg("Current State: " + fmt.Sprint(c.currentState))
+}
+
+func (s *server) getLog(c *client) {
+	c.msg(fmt.Sprintf("%d message(s) in pending", len(Log)))
+}
+
 func (s *server) nodes(c *client) {
-	c.msg(fmt.Sprintf("Total active nodes: %d", len(c.room.members)))
-	if len(c.room.members) == 0 {
+	c.msg(fmt.Sprintf("Total active nodes: %d", len(c.table.members)))
+	if len(c.table.members) == 0 {
 		return
 	}
-	for addr, m := range c.room.members {
+	for addr, m := range c.table.members {
 		c.msg(fmt.Sprintf("%s: %s", m.nick, addr))
 	}
 }
@@ -59,26 +94,106 @@ func (s *server) newClient(conn net.Conn) *client {
 
 func (s *server) join(c *client) {
 
-	r, ok := s.rooms["main_table"]
+	r, ok := s.nodeTable["node_table"]
 	if !ok {
-		r = &room{
-			name:   "main_table",
+		r = &table{
+			name:    "node_table",
 			members: make(map[net.Addr]*client),
 		}
-		s.rooms["main_table"] = r
+		s.nodeTable["node_table"] = r
 	}
 	r.members[c.conn.RemoteAddr()] = c
 
-	s.quitCurrentRoom(c)
-	c.room = r
+	s.removeFromTable(c)
+	c.table = r
 
 	r.broadcast(c, fmt.Sprintf("node id: %s connected", c.nick))
 
-	c.msg(fmt.Sprintf("Node successfully synced"))
+	c.msg("Node successfully synced")
+}
+
+func (s *server) sanitizeArg(msg []string) ([]Instruction, error) {
+	var commands []Instruction
+
+	for _, op := range msg {
+		if strings.HasPrefix(op, "PUSH") {
+			strOp := string(op[4:])
+			fmt.Println(strOp)
+			intOp, err := strconv.Atoi(strOp)
+			if err != nil {
+				return nil, errors.New(err.Error())
+			}
+			opcode, data := push(intOp)
+			inst := Instruction{Opcode: opcode, Data: data}
+			commands = append(commands, inst)
+
+		} else if strings.HasPrefix(op, "ADD") {
+			opcode, data := add()
+			inst := Instruction{Opcode: opcode, Data: data}
+			commands = append(commands, inst)
+
+		} else if strings.HasPrefix(op, "SUB") {
+			opcode, data := sub()
+			inst := Instruction{Opcode: opcode, Data: data}
+			commands = append(commands, inst)
+
+		} else if strings.HasPrefix(op, "MUL") {
+			opcode, data := mul()
+			inst := Instruction{Opcode: opcode, Data: data}
+			commands = append(commands, inst)
+
+		} else if strings.HasPrefix(op, "DIV") {
+			opcode, data := div()
+			inst := Instruction{Opcode: opcode, Data: data}
+			commands = append(commands, inst)
+
+		} else if strings.HasPrefix(op, "MOD") {
+			opcode, data := mod()
+			inst := Instruction{Opcode: opcode, Data: data}
+			commands = append(commands, inst)
+
+		} else if strings.HasPrefix(op, "AND") {
+			opcode, data := and()
+			inst := Instruction{Opcode: opcode, Data: data}
+			commands = append(commands, inst)
+
+		} else if strings.HasPrefix(op, "OR") {
+			opcode, data := or()
+			inst := Instruction{Opcode: opcode, Data: data}
+			commands = append(commands, inst)
+
+		} else if strings.HasPrefix(op, "XOR") {
+			opcode, data := xor()
+			inst := Instruction{Opcode: opcode, Data: data}
+			commands = append(commands, inst)
+
+		} else if strings.HasPrefix(op, "LSHIFT") {
+			opcode, data := lshift()
+			inst := Instruction{Opcode: opcode, Data: data}
+			commands = append(commands, inst)
+
+		} else if strings.HasPrefix(op, "RSHIFT") {
+			opcode, data := rshift()
+			inst := Instruction{Opcode: opcode, Data: data}
+			commands = append(commands, inst)
+
+		} else if strings.HasPrefix(op, "DUMP") {
+			opcode, data := dump()
+			inst := Instruction{Opcode: opcode, Data: data}
+			commands = append(commands, inst)
+
+		} else {
+			return nil, errors.New("Invalid instruction, message dropped" + op)
+		}
+	}
+	return commands, nil
 }
 
 func (s *server) msg(c *client, args []string) {
-	if c.room == nil {
+	now := time.Now()
+	nowNano := now.UTC().UnixNano()
+
+	if c.table == nil {
 		c.msg("Node has to be added to table first")
 		return
 	}
@@ -87,20 +202,46 @@ func (s *server) msg(c *client, args []string) {
 		return
 	}
 
-	msg := strings.Join(args[1:], " ")
-	c.room.broadcast(c, c.nick+": "+msg)
+	// first time server sees the message
+	msg := strings.Split(args[1], ";")
+	code, err := s.sanitizeArg(msg)
+
+	if err != nil {
+		fmt.Println("error parsing instructions", err)
+		return
+	}
+
+	out, err := json.Marshal(code)
+	if err != nil {
+		fmt.Println("error parsing json", err)
+		return
+	}
+	c.table.broadcast(c, "EXECUTE!!"+string(out)+"!!"+c.nick+"!!"+fmt.Sprint(nowNano))
+	Log = append(Log, code)
+	jsonLog, err := json.Marshal(Log)
+	if err != nil {
+		fmt.Println("error parsing json", err)
+		return
+	}
+	c.table.broadcast(c, "UPDATE!!"+string(jsonLog))
+	newState, err := c.runCode(code)
+	if err != nil {
+		c.msg("Execution failed: " + err.Error())
+		return
+	}
+	c.msg("Execution result: " + fmt.Sprint(newState))
 }
 
 func (s *server) quit(c *client) {
 	log.Printf("node disconnected: %s id: %s", c.conn.RemoteAddr().String(), c.nick)
-	s.quitCurrentRoom(c)
+	s.removeFromTable(c)
 	c.conn.Close()
 }
 
-func (s *server) quitCurrentRoom(c *client) {
-	if c.room != nil {
-		oldRoom := s.rooms[c.room.name]
-		delete(s.rooms[c.room.name].members, c.conn.RemoteAddr())
-		oldRoom.broadcast(c, fmt.Sprintf("%s has left the room", c.nick))
+func (s *server) removeFromTable(c *client) {
+	if c.table != nil {
+		oldTable := s.nodeTable[c.table.name]
+		delete(s.nodeTable[c.table.name].members, c.conn.RemoteAddr())
+		oldTable.broadcast(c, fmt.Sprintf("%s: %s disconnected", c.nick, c.conn.RemoteAddr()))
 	}
 }

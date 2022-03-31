@@ -5,6 +5,8 @@ type commandID int
 const (
 	CMD_MSG commandID = iota
 	CMD_ACTIVE
+	CMD_LOG
+	CMD_STATE
 	CMD_QUIT
 )
 

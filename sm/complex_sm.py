@@ -59,4 +59,4 @@ fsm.add_state("SECOND_DIGIT_ONWARDS*", ".", "AFTER_DOT")
 fsm.add_state("AFTER_DOT", "0123456789", "MANTISSA*")
 fsm.add_state("MANTISSA*", "0123456789", "MANTISSA*")
 
-fsm.run("-34.0A")
+fsm.run("-34.0ghdcws")
