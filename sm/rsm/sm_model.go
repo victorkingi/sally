@@ -44,7 +44,7 @@ type Action interface {
 }
 
 // An event is a struct containing, id of node sending it, code to be executed and hash of final state the node has
-type Event struct {
+type _Event struct {
 	Hash        Hash
 	Id          string
 	code        int

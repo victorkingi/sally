@@ -23,14 +23,17 @@ type Instruction struct {
 	Data   int
 }
 
-type Instructions []Instruction
+type Event struct {
+	timestamp int64
+	Instructions []Instruction
+}
 
-var Log []Instructions //This stores all events ever executed, if a new node connects, executing all these events
+var Log []Event //This stores all events ever executed, if a new node connects, executing all these events
 						// should get it to the current state
 
-func contains(s []Instructions, e int64) bool {
+func contains(s []Event, e int64) bool {
 	for _, a := range s {
-		if a == e {
+		if a.timestamp == e {
 			return true
 		}
 	}
@@ -66,7 +69,8 @@ func (s *server) getState(c *client) {
 }
 
 func (s *server) getLog(c *client) {
-	c.msg(fmt.Sprintf("%d message(s) in pending", len(Log)))
+	c.msg(fmt.Sprintf("Size of log: %d", len(Log)))
+	c.msg(fmt.Sprint("LOG", Log))
 }
 
 func (s *server) nodes(c *client) {
@@ -89,6 +93,8 @@ func (s *server) newClient(conn net.Conn) *client {
 		conn:     conn,
 		nick:     string(id.String()),
 		commands: s.commands,
+		currentState: 0,
+		stateHash: "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9", // sha256 of 0
 	}
 }
 
@@ -118,7 +124,6 @@ func (s *server) sanitizeArg(msg []string) ([]Instruction, error) {
 	for _, op := range msg {
 		if strings.HasPrefix(op, "PUSH") {
 			strOp := string(op[4:])
-			fmt.Println(strOp)
 			intOp, err := strconv.Atoi(strOp)
 			if err != nil {
 				return nil, errors.New(err.Error())
@@ -217,7 +222,8 @@ func (s *server) msg(c *client, args []string) {
 		return
 	}
 	c.table.broadcast(c, "EXECUTE!!"+string(out)+"!!"+c.nick+"!!"+fmt.Sprint(nowNano))
-	Log = append(Log, code)
+	event := Event{timestamp: nowNano, Instructions: code}
+	Log = append(Log, event)
 	jsonLog, err := json.Marshal(Log)
 	if err != nil {
 		fmt.Println("error parsing json", err)
@@ -230,6 +236,7 @@ func (s *server) msg(c *client, args []string) {
 		return
 	}
 	c.msg("Execution result: " + fmt.Sprint(newState))
+	c.sendState()
 }
 
 func (s *server) quit(c *client) {
