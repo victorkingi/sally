@@ -175,8 +175,9 @@ func (c *client) runCode(program []Instruction) (int, error) {
 			panic("Unreachable case")
 		}
 	}
-	// at this stage the stack should contain only one element since all operations
-	// where successful
+	// if the stack has more than one value at the end,
+	// i.e. instructions where only PUSH and PUSH
+	// the last push represents the new state
 	ans, err := stack.Pop()
 	if err != nil {
 		return 0, err

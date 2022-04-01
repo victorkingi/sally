@@ -2,8 +2,6 @@ package main
 
 type Opcode int
 
-type Intepreter struct {}
-
 const (
 	PUSH Opcode = iota
 	ADD
