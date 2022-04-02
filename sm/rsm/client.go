@@ -74,7 +74,7 @@ func (c *client) runCode(program []Instruction) (int, error) {
 			if err1 != nil {
 				return 0, err1
 			}
-			stack.Push(a + b)
+			stack.Push(b + a)
 		case SUB:
 			a, err := stack.Pop()
 			b, err1 := stack.Pop()
@@ -84,7 +84,7 @@ func (c *client) runCode(program []Instruction) (int, error) {
 			if err1 != nil {
 				return 0, err1
 			}
-			stack.Push(a - b)
+			stack.Push(b - a)
 		case MUL:
 			a, err := stack.Pop()
 			b, err1 := stack.Pop()
@@ -94,7 +94,7 @@ func (c *client) runCode(program []Instruction) (int, error) {
 			if err1 != nil {
 				return 0, err1
 			}
-			stack.Push(a * b)
+			stack.Push(b * a)
 		case DIV:
 			a, err := stack.Pop()
 			b, err1 := stack.Pop()
@@ -104,7 +104,7 @@ func (c *client) runCode(program []Instruction) (int, error) {
 			if err1 != nil {
 				return 0, err1
 			}
-			stack.Push(a / b)
+			stack.Push(b / a)
 		case MOD:
 			a, err := stack.Pop()
 			b, err1 := stack.Pop()
@@ -114,7 +114,7 @@ func (c *client) runCode(program []Instruction) (int, error) {
 			if err1 != nil {
 				return 0, err1
 			}
-			stack.Push(a % b)
+			stack.Push(b % a)
 		case AND:
 			a, err := stack.Pop()
 			b, err1 := stack.Pop()
@@ -124,7 +124,7 @@ func (c *client) runCode(program []Instruction) (int, error) {
 			if err1 != nil {
 				return 0, err1
 			}
-			stack.Push(a & b)
+			stack.Push(b & a)
 		case OR:
 			a, err := stack.Pop()
 			b, err1 := stack.Pop()
@@ -134,7 +134,7 @@ func (c *client) runCode(program []Instruction) (int, error) {
 			if err1 != nil {
 				return 0, err1
 			}
-			stack.Push(a | b)
+			stack.Push(b | a)
 		case XOR:
 			a, err := stack.Pop()
 			b, err1 := stack.Pop()
@@ -144,7 +144,7 @@ func (c *client) runCode(program []Instruction) (int, error) {
 			if err1 != nil {
 				return 0, err1
 			}
-			stack.Push(a ^ b)
+			stack.Push(b ^ a)
 		case LSHIFT:
 			a, err := stack.Pop()
 			b, err1 := stack.Pop()
@@ -154,7 +154,7 @@ func (c *client) runCode(program []Instruction) (int, error) {
 			if err1 != nil {
 				return 0, err1
 			}
-			stack.Push(a << b)
+			stack.Push(b << a)
 		case RSHIFT:
 			a, err := stack.Pop()
 			b, err1 := stack.Pop()
@@ -164,7 +164,7 @@ func (c *client) runCode(program []Instruction) (int, error) {
 			if err1 != nil {
 				return 0, err1
 			}
-			stack.Push(a >> b)
+			stack.Push(b >> a)
 		case DUMP:
 			a, err := stack.Pop()
 			if err != nil {
