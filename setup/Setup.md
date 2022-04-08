@@ -19,23 +19,8 @@ This file contains instructions on how to get a local ethereum network running o
 
 5. During the script execution, you will be required to create a password for each node instance. Use `helloworld` as the password. If you would like to change it, you will have to change the script at `line 9`.<br /> `echo "MY_NEW_PASSWORD" >> password.txt;`.
 
-6. When the above script exists successfully, you can now run `initialise.sh`
+6. When the above script exists successfully, you can now run `initialise.sh` which will tell `geth` to use the genesis file  `year3project.json`.
 
-4. Run `mvn install:install-file -Dfile="src/main/resources/lib/OpenPseudonymiserCryptoLib.jar" -DgroupId="com.open-pseudonymiser" -DartifactId="open-pseudonymiser" -Dversion="1.0.0" -Dpackaging="jar"` from the root source directory to install `OpenPseudonymiser.jar` as a `mvn local repository dependency`.
-4. If you do not wish to compile the source code, find the jar file
-   in releases.
-Run `java -jar healthcare-data-simulators-x.x-SNAPSHOT.jar` from releases.
+7. Create folder inside `ethereum` called `bnode` and run `../../geth/bootnode -genkey boot.key`. To start the boot node, run `../../geth/bootnode -nodekey "boot.key" -verbosity 7 -addr "127.0.0.1:30301"` while still inside `ethereum/bnode/` folder. An enode string will be generated in the terminal with this syntax `enode://xx@127.0.0.1:0?discport=30301`. Copy it and update the `start_node_x.sh` scripts with it incase they are not the same.
 
-###### NB:- The jar files in step 2, 3 & 4 will be extracted from `main/resources/lib` folder to a `lib` folder for execution.
-
-
-
-## Contributors
-Vlad Andrei Bucur - vladbucur2000  
-George Edward Nechitoaia - georgeedward2000 <br>
-Victor Traistaru - Wyktorrr  <br>
-Ena Balatinac - ennaena <br>
-Victor Kingi - victorkingi 
-
-## License
-This software is being developed under the MIT License.
+8. While in root directory, `year3_project_code`, run each `start_node_x.sh` script in a separate terminal to start all geth nodes.
