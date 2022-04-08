@@ -8,7 +8,7 @@ do
     mkdir "node$i"; cd "node$i"; touch password.txt;
     echo "helloworld" >> password.txt;
     cd ..; cd ..;
-    /geth/geth --datadir "ethereum/node$i/data" account new;
+    geth/geth --datadir "ethereum/node$i/data" account new;
     cd "ethereum";
 
 done
