@@ -1,8 +1,0 @@
-=============== Apr 8, 2022 (EDT) ===============
-13:49:54.706777 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-13:49:54.857337 db@open opening
-13:49:54.858314 version@stat F·[] S·0B[] Sc·[]
-13:49:54.879527 db@janitor F·2 G·0
-13:49:54.879561 db@open done T·22.198567ms
-13:49:54.887430 db@close closing
-13:49:54.887478 db@close done T·46.858µs
