@@ -1,3 +1,2 @@
 #! /bin/bash
-
-geth/geth --networkid 48563 --datadir "ethereum/node5/data" --bootnodes enode://f47e4b019fcf801dde2a6a12142b371c5c54445e3f46c53fd3d4073c0f0372ea8b69f4bf3133538a0fbdb091d1f3b22b58cfba799e4b6615a45df7c3260e1428@127.0.0.1:0?discport=30301 --port 30306 --ipcdisable --syncmode full --http --allow-insecure-unlock --http.corsdomain "*" --http.port 8551 --unlock 0x5a0bd2c59455bd91b2f00717dc20308258535746 --password "ethereum/node5/password.txt" --mine console
+geth/geth --networkid 9984 --datadir "ethereum/node5/data" --bootnodes enode://3378f6da9df7fdfcad37f89cad33d61acf365f99bf21f73979b02d796057b8879b8f9f54e0d14a57d04942bc55a4aef9f0d126eaa1f52b118b899a29293005d2@127.0.0.1:0?discport=30301 --port 30306 --ipcdisable --syncmode full --http --allow-insecure-unlock --http.corsdomain "*" --http.port 8551 --unlock 0xgfv33dbe9afb2b91c6ab8053dcdbad30bf7c629e --password "ethereum/node5/password.txt" --mine console

@@ -1,0 +1,32 @@
+=============== Apr 9, 2022 (BST) ===============
+16:30:05.355298 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:30:05.358189 db@open opening
+16:30:05.358784 version@stat F·[] S·0B[] Sc·[]
+16:30:05.360486 db@janitor F·2 G·0
+16:30:05.360546 db@open done T·2.3027ms
+16:30:05.364497 db@close closing
+16:30:05.364584 db@close done T·84.9µs
+=============== Apr 9, 2022 (BST) ===============
+16:32:31.763490 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:32:31.763634 version@stat F·[] S·0B[] Sc·[]
+16:32:31.763689 db@open opening
+16:32:31.763729 journal@recovery F·1
+16:32:31.764175 journal@recovery recovering @1
+16:32:31.767935 memdb@flush created L0@2 N·625 S·52KiB "\x02d\xfc..\x19Ba,v430":"\xfe\x88\xcf..H\xef\xcc,v363"
+16:32:31.768115 version@stat F·[1] S·52KiB[52KiB] Sc·[0.25]
+16:32:31.771470 db@janitor F·3 G·0
+16:32:31.771520 db@open done T·7.8225ms
+16:32:31.775137 db@close closing
+16:32:31.775235 db@close done T·93.9µs
+=============== Apr 9, 2022 (BST) ===============
+16:33:03.822195 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:33:03.822331 version@stat F·[1] S·52KiB[52KiB] Sc·[0.25]
+16:33:03.822386 db@open opening
+16:33:03.822462 journal@recovery F·1
+16:33:03.822781 journal@recovery recovering @3
+16:33:03.824742 memdb@flush created L0@5 N·1 S·387B "eth..e\u007f+,v627":"eth..e\u007f+,v627"
+16:33:03.824901 version@stat F·[2] S·52KiB[52KiB] Sc·[0.50]
+16:33:03.828687 db@janitor F·4 G·0
+16:33:03.828746 db@open done T·6.3139ms
+16:33:03.832489 db@close closing
+16:33:03.832598 db@close done T·107.7µs
