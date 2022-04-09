@@ -3,7 +3,8 @@ This file contains instructions on how to get a local ethereum network running o
 **NB:- The instructions assume that the user is running a linux distro**
 
 ## Requirements 
-1. None
+1. Latest `git` version installed.
+2. `tar` for extracting the geth zip.
 
 
 ## Getting Started
