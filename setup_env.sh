@@ -1,5 +1,7 @@
 #! /bin/bash
 
+zipFile=$(ls geth);
+tar -xzvf  "geth/${zipFile}" --directory geth --strip-components=1;
 mkdir "ethereum";
 
 > accounts.txt;

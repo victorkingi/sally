@@ -1,32 +1,8 @@
 =============== Apr 9, 2022 (BST) ===============
-16:30:05.312262 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-16:30:05.315689 db@open opening
-16:30:05.316271 version@stat F·[] S·0B[] Sc·[]
-16:30:05.318124 db@janitor F·2 G·0
-16:30:05.318169 db@open done T·2.4464ms
-16:30:05.324102 db@close closing
-16:30:05.324167 db@close done T·64.6µs
-=============== Apr 9, 2022 (BST) ===============
-16:32:31.720452 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-16:32:31.720567 version@stat F·[] S·0B[] Sc·[]
-16:32:31.720621 db@open opening
-16:32:31.720684 journal@recovery F·1
-16:32:31.721079 journal@recovery recovering @1
-16:32:31.723940 memdb@flush created L0@2 N·625 S·52KiB "\x02d\xfc..\x19Ba,v430":"\xfe\x88\xcf..H\xef\xcc,v363"
-16:32:31.724299 version@stat F·[1] S·52KiB[52KiB] Sc·[0.25]
-16:32:31.727620 db@janitor F·3 G·0
-16:32:31.727632 db@open done T·6.9855ms
-16:32:31.732325 db@close closing
-16:32:31.732449 db@close done T·115.8µs
-=============== Apr 9, 2022 (BST) ===============
-16:33:03.777349 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
-16:33:03.777517 version@stat F·[1] S·52KiB[52KiB] Sc·[0.25]
-16:33:03.777571 db@open opening
-16:33:03.777637 journal@recovery F·1
-16:33:03.778040 journal@recovery recovering @3
-16:33:03.779772 memdb@flush created L0@5 N·1 S·387B "eth..e\u007f+,v627":"eth..e\u007f+,v627"
-16:33:03.780182 version@stat F·[2] S·52KiB[52KiB] Sc·[0.50]
-16:33:03.783200 db@janitor F·4 G·0
-16:33:03.783256 db@open done T·5.6589ms
-16:33:03.788192 db@close closing
-16:33:03.788363 db@close done T·171.9µs
+17:58:06.205863 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:58:06.209858 db@open opening
+17:58:06.210344 version@stat F·[] S·0B[] Sc·[]
+17:58:06.211804 db@janitor F·2 G·0
+17:58:06.211856 db@open done T·1.9604ms
+17:58:06.216505 db@close closing
+17:58:06.216659 db@close done T·129.3µs
