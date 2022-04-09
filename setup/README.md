@@ -8,7 +8,7 @@ This file contains instructions on how to get a local ethereum network running o
 
 
 ## Getting Started
-All required files and keys have been pre-generated as the setup process takes time. If you would like to generate your own nodes and ethereum addresses, follow the instructions below. If not, skip steps 4, 5, 6 and 7
+All required files and keys have been pre-generated as the setup process takes time. If you would like to generate your own nodes and ethereum addresses, follow the instructions below. If not, follow steps 1 and 2. Extract the zip file inside `geth/` directory using `tar -xzvf  "geth/${TAR_FILE_NAME}" --directory geth --strip-components=1` command. Run `start_bnode.sh` in one terminal, and run all `start_node_x.sh` commands, each, in separate terminals.
 
 ### Setup
 1.  `git clone https://github.com/victorkingi/year3_project_code.git` in a folder.
