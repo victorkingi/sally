@@ -20,6 +20,7 @@ instructions below. If not, skip step 4, 5, 6 and 7
 4. Run `./setup_env.sh`. If the error `bash: ./setup_env.sh: Permission denied` shows up, first run `chmod ugo+x setup_env.sh` then `./setup_env.sh`. Depending on your system priveleges, you might be required to prefix the `chmod` command with `sudo`.
 
 5. During the script execution, you will be required to create a password for each node instance. Use `helloworld` as the password. If you would like to change it, you will have to change the script at `line 9`.<br /> `echo "MY_NEW_PASSWORD" >> password.txt;`.
+6. Run `geth/puppeth` to create genesis file. type `year3project` as network name. Choose option 2. Configure new genesis. Choose option 1 Create new genesis from scratch. Choose option 2 Clique - proof-of-authority. Type 5 as block time. For accounts allowed to seal, we will include all the addresses of the 5 nodes.
 
 6. When the above script exists successfully, you can now run `initialise.sh` which will tell `geth` to use the genesis file  `year3project.json`.
 
