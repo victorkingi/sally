@@ -21,7 +21,7 @@ All required files and keys have been pre-generated as the setup process takes t
 
 5. During the script execution, you will be required to create a password for each node instance. Use `helloworld` as the password. If you would like to change it, you will have to change the script at `line 9`.<br /> `echo "MY_NEW_PASSWORD" >> password.txt;`. A new file `accounts.txt` should be created that contains all 5 node addresses in order.
 
-6. Run `geth/puppeth` to create genesis file. type `year3project` as network name. Choose option 2. Configure new genesis. Choose option 1 Create new genesis from scratch. Choose option 2 Clique - proof-of-authority. Type 5 as block time. For accounts allowed to seal, copy the 5 nodes addresses in `accounts.txt` here pressing enter after each. For which accounts should be prefunded, enter the first 2 nodes addresses. Press enter under Should the precompile-addresses be pre-funded. For the chain id, type `9984`. At this point, we now have a genesis file but we still need to export it. Under What would you like to do?, choose 2 Manage existing genesis. Choose 2 Export genesis configuration. Type `ethereum` under which folder to save the genesis specs into. After this you can exit the terminal running `geth/puppeth`.
+6. Run `geth/puppeth` to create genesis file. type `year3project` as network name. Choose option 2. Configure new genesis. Choose option 1 Create new genesis from scratch. Choose option 2 Clique - proof-of-authority. Type 5 as block time. For accounts allowed to seal, copy the 5 nodes addresses in `accounts.txt` here pressing enter after each. For which accounts should be prefunded, enter the first 2 nodes addresses. Press enter under "Should the precompile-addresses be pre-funded". For the chain id, type `9984`. At this point, we now have a genesis file but we still need to export it. Under "What would you like to do?", choose 2 Manage existing genesis. Choose 2 Export genesis configuration. Type `ethereum` under which folder to save the genesis specs into. After this you can exit the terminal running `geth/puppeth`.
 
 
 7. Run `initialise.sh` which will tell `geth` to use the genesis file  `year3project.json` and will also generate a boot node key.
@@ -30,4 +30,4 @@ All required files and keys have been pre-generated as the setup process takes t
 
 9. Finally run `create_start_scripts.sh` which will create `start_node_x.sh` files needed to start the nodes.
 
-10. While in root directory, `year3_project_code`, run each `start_node_x.sh` script in a separate terminal to start all geth nodes.
+10. While in root directory, `year3_project_code`, run each `start_node_x.sh` script in a separate terminal to start all geth nodes. At this point, the nodes should start looking for peers, while submitting blocks and communicating with each other.
