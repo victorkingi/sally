@@ -1,7 +1,8 @@
 #! /bin/bash
 
 [[ -d ethereum ]] && rm -r -f ethereum;
-[[ -f accounts.txt ]] && [[ -f enode.txt ]] && rm accounts.txt enode.txt;
+[[ -f accounts.txt ]] && rm accounts.txt;
+[[ -f enode.txt ]] && rm enode.txt;
 
 for i in 1 2 3 4 5
 do
