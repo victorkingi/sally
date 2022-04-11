@@ -8,10 +8,18 @@ This file contains instructions on how to get a local ethereum network running o
 
 
 ## Getting Started
-All required files and keys have been pre-generated as the setup process takes time. If you would like to generate your own nodes and ethereum addresses, follow the instructions below. If not follow steps 1 and 2. Extract the zip file inside `geth/` directory using `tar -xzvf  "geth/${TAR_FILE_NAME}" --directory geth --strip-components=1` command. Run `start_bnode.sh` in one terminal, and run all `start_node_x.sh` commands, each, in separate terminals.
+All required files and keys have been pre-generated as the setup process takes time. If you would like to generate your own nodes and ethereum addresses, follow [Setup a new network](#setup-a-new-network). If not, follow [Run existing network](#run-existing-network). . Run `start_bnode.sh` in one terminal, and run all `start_node_x.sh` commands, each, in separate terminals.
 
 ### Run existing network
+NB:- All this commands except for git clone should be run inside `year3_project_code/` directory.
 
+1. `git clone https://github.com/victorkingi/year3_project_code.git` in a folder.
+
+2. . Go to [Official Ethereum Download Page](https://geth.ethereum.org/downloads/https://geth.ethereum.org/downloads/) and download the latest linux version of `geth & tools`. Move the `tar.gz` file downloaded to `year3_project_code/geth/` folder so that the next script can easily access it. You will need to run `mkdir geth` inside `year3_project_code/` incase `geth` folder doesn't exist. Make sure `geth` folder contains ONLY 1 file which is the zip file.
+
+3. Extract the zip file inside `geth/` directory using `tar -xzvf  "geth/${TAR_FILE_NAME}" --directory geth --strip-components=1` command.
+
+4. While in root directory, `year3_project_code`, run each `./start_node_{x}.sh` script in a separate terminal to start all geth nodes. At this point, the nodes should start looking for peers, while submitting blocks and communicating with each other.
 
 ### Setup a new network
 1.  `git clone https://github.com/victorkingi/year3_project_code.git` in a folder.
