@@ -76,7 +76,7 @@ $ netstat -ltnp
 | p                 | Shows process ID and name     |
 
 This will show all ports currently being used by the system. If they are a lot, you could use the command `netstat -l{t or u depending if a tcp or udp port was reported}np | grep -w ':{PORT_NUMBER_REPORTED}'` which will pipe the output into `grep` and `grep` will filter out the port number specified.
-With this information, you could then check if it is an important process and make a decision to free the port or use a different port by changing `start_node_5.sh` code.
+With this information, you could then check if it is an important process and make a decision to free the port or use a different port by changing `start_node_5.sh` code.<br /><br />
 **NB:-** Only node 5 will run http and web socket api. 
 
 
