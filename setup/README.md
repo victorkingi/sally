@@ -11,7 +11,7 @@ This file contains instructions on how to get a local ethereum network running o
 All required files and keys have been pre-generated as the setup process takes time. If you would like to generate your own nodes and ethereum addresses, follow [Setup a new network](#setup-a-new-network). If not, follow [Run existing network](#run-existing-network).
 
 ### Run existing network
-NB:- All this commands except for git clone should be run inside `year3_project_code/` directory.
+**NB:-** All this commands except for git clone should be run inside `year3_project_code/` directory.
 
 1. `git clone https://github.com/victorkingi/year3_project_code.git` in a folder.
 
@@ -24,7 +24,7 @@ NB:- All this commands except for git clone should be run inside `year3_project_
 5. While in root directory, `year3_project_code`, run each `./start_node_{x}.sh` script in a separate terminal to start all geth nodes. At this point, the nodes should start looking for peers, while submitting blocks and communicating with each other.
 
 ### Setup a new network
-NB:- All this commands except for git clone should be run inside `year3_project_code/` directory.
+**NB:-** All this commands except for git clone should be run inside `year3_project_code/` directory.
 
 1.  `git clone https://github.com/victorkingi/year3_project_code.git` in a folder.
 
@@ -75,7 +75,8 @@ $ netstat -ltnp
 | n                 | Show numerical addresses      |
 | p                 | Shows process ID and name     |
 
-This will show all ports currenting being used by the system. If they are a lot, you could use the command `netstat -l{t or u depending if a tcp or udp port was reported}np | grep -w ':{PORT_NUMBER_REPORTED}'` to only show the process using the specific port.
-With this information, you could then check if it is an important process and make a decision to free the port or use a different port by changing `start_node_5.sh` code
+This will show all ports currently being used by the system. If they are a lot, you could use the command `netstat -l{t or u depending if a tcp or udp port was reported}np | grep -w ':{PORT_NUMBER_REPORTED}'` which will pipe the output into `grep` and `grep` will filter out the port number specified.
+With this information, you could then check if it is an important process and make a decision to free the port or use a different port by changing `start_node_5.sh` code.
+**NB:-** Only node 5 will run http and web socket api. 
 
 
