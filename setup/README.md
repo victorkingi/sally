@@ -36,7 +36,8 @@ NB:- All this commands except for git clone should be run inside `year3_project_
 
 5. During the script execution, you will be required to create a password for each node instance. Use `helloworld` as the password. If you would like to change it, you will have to change the script at `line 9`.<br /> `echo "MY_NEW_PASSWORD" >> password.txt;`. A new file `accounts.txt` should be created that contains all 5 node addresses in order.
 
-6. Run `geth/puppeth` to create genesis file. type `year3project` as network name. Choose option 2. Configure new genesis. Choose option 1 Create new genesis from scratch. Choose option 2 Clique - proof-of-authority. Type 5 as block time. For accounts allowed to seal, copy the 5 nodes addresses in `accounts.txt` here pressing enter after each. For which accounts should be prefunded, enter the first 2 nodes addresses. Press enter under "Should the precompile-addresses be pre-funded". For the chain id, type `9984`. At this point, we now have a genesis file but we still need to export it. Under "What would you like to do?", choose 2 Manage existing genesis. Choose 2 Export genesis configuration. Type `ethereum` under which folder to save the genesis specs into. After this you can exit the terminal running `geth/puppeth`.
+6. Run `geth/puppeth` to create genesis file. type `year3project` as network name. Under "What would you like to do?", choose 2 "Manage existing genesis". Choose option 3 "Remove genesis configuration". Choose option 2 "Configure new genesis". Choose option 1 "Create new genesis from scratch". Choose option 2 "Clique - proof-of-authority". Type 5 as block time. For accounts allowed to seal, copy the 5 nodes addresses in `accounts.txt` here pressing enter after each (You will have to press enter twice to go to the next question). For which accounts should be prefunded, enter the first 2 nodes addresses. 
+Press enter under "Should the precompile-addresses be pre-funded". For the chain id, type `9984`. At this point, we now have a genesis file but we still need to export it. Under "What would you like to do?", choose 2 "Manage existing genesis". Choose 2 "Export genesis configuration". Type `ethereum` under which folder to save the genesis specs into. After this you can exit the terminal running `geth/puppeth`.
 
 
 7. Run `./initialise.sh` which will tell `geth` to use the genesis file  `year3project.json` and will also generate a boot node key.
@@ -46,3 +47,35 @@ NB:- All this commands except for git clone should be run inside `year3_project_
 9. Open up a new terminal while the boot node is running and execute `./create_start_scripts.sh` which will create `start_node_{x}.sh` files needed to start the nodes.
 
 10. While in root directory, `year3_project_code`, run each `./start_node_{x}.sh` script in a separate terminal to start all geth nodes. At this point, the nodes should start looking for peers, while submitting blocks and communicating with each other.
+
+### Common errors debugging
+
+**Problem:** After running `./start_node_{x}.sh` you might get the error `Fatal: Error starting protocol stack: listen udp :30303: bind: address already in use` for udp or similar error in tcp.
+
+**Solution:** Install netstat by running the following command depending on your distro:
+```
+$ sudo apt-get install net-tools    [On Debian/Ubuntu & Mint] 
+$ sudo dnf install net-tools        [On CentOS/RHEL/Fedora and Rocky Linux/AlmaLinux]
+$ pacman -S netstat-nat             [On Arch Linux]
+$ emerge sys-apps/net-tools         [On Gentoo]
+$ sudo dnf install net-tools        [On Fedora]
+$ sudo zypper install net-tools     [On openSUSE]
+
+```
+Once installed, run:
+```
+$ netstat -ltnp
+```
+`-ltnp` represent the following options:
+| Command option    | Description                   |
+| :---              |       :---:                   |
+| l                 | Only show listening sockets   |
+| t                 | Display tcp connections       |
+| u                 | Display udp connections       |
+| n                 | Show numerical addresses      |
+| p                 | Shows process ID and name     |
+
+This will show all ports currenting being used by the system. If they are a lot, you could use the command `netstat -l{t or u depending if a tcp or udp port was reported}np | grep -w ':{PORT_NUMBER_REPORTED}'` to only show the process using the specific port.
+With this information, you could then check if it is an important process and make a decision to free the port or use a different port by changing `start_node_5.sh` code
+
+
