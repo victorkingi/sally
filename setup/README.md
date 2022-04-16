@@ -19,9 +19,11 @@ All required files and keys have been pre-generated as the setup process takes t
 
 3. Extract the zip file inside `geth/` directory using `tar -xzvf  "geth/${TAR_FILE_NAME}" --directory geth --strip-components=1` command.
 
-4. Run `start_bnode.sh` in one terminal.
+4. Run `./initialise.sh` which will tell `geth` to use the genesis file  `year3project.json` and will also generate a boot node key.
 
-5. While in root directory, `year3_project_code`, run each `./start_node_{x}.sh` script in a separate terminal to start all geth nodes. At this point, the nodes should start looking for peers, while submitting blocks and communicating with each other.
+5. Run `start_bnode.sh` in one terminal.
+
+6. While in root directory, `year3_project_code`, run each `./start_node_{x}.sh` script in a separate terminal to start all geth nodes. At this point, the nodes should start looking for peers, while submitting blocks and communicating with each other.
 
 ### Setup a new network
 **NB:-** All this commands except for git clone should be run inside `year3_project_code/` directory.
