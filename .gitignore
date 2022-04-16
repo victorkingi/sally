@@ -1,5 +1,5 @@
 /geth/*
-/node_modules/
-package-lock.json
+/attacks/node_modules/*
+/attacks/package-lock.json
 /temp_geth/*
 /test/*
