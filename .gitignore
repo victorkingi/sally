@@ -3,3 +3,8 @@
 /attacks/package-lock.json
 /temp_geth/*
 /test/*
+/ethereum/node1/data/geth/*
+/ethereum/node2/data/geth/*
+/ethereum/node3/data/geth/*
+/ethereum/node4/data/geth/*
+/ethereum/node5/data/geth/*
