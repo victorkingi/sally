@@ -15,7 +15,7 @@ All required files and keys have been pre-generated as the setup process takes t
 
 1. `git clone https://github.com/victorkingi/year3_project_code.git` in a folder.
 
-2. . Go to [Official Ethereum Download Page](https://geth.ethereum.org/downloads/) and download the latest linux version of `geth & tools`. Move the `tar.gz` file downloaded to `year3_project_code/geth/` folder so that the next script can easily access it. You will need to run `mkdir geth` inside `year3_project_code/` incase `geth` folder doesn't exist. Make sure `geth` folder contains ONLY 1 file which is the zip file.
+2. Go to [Official Ethereum Download Page](https://geth.ethereum.org/downloads/) and download the latest linux version of `geth & tools`. Move the `tar.gz` file downloaded to `year3_project_code/geth/` folder so that the next script can easily access it. You will need to run `mkdir geth` inside `year3_project_code/` incase `geth` folder doesn't exist. Make sure `geth` folder contains ONLY 1 file which is the zip file.
 
 3. Extract the zip file inside `geth/` directory using `tar -xzvf  "geth/${TAR_FILE_NAME}" --directory geth --strip-components=1` command.
 

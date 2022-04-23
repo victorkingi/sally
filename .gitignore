@@ -1,10 +1,15 @@
 /geth/*
 /attacks/node_modules/*
 /attacks/package-lock.json
-/temp_geth/*
+/altered_geths/*
 /test/*
 /ethereum/node1/data/geth/*
+/ethereum/node1/data/history
 /ethereum/node2/data/geth/*
+/ethereum/node2/data/history
 /ethereum/node3/data/geth/*
+/ethereum/node3/data/history
 /ethereum/node4/data/geth/*
+/ethereum/node4/data/history
 /ethereum/node5/data/geth/*
+/ethereum/node5/data/history
