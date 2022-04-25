@@ -1,55 +1,52 @@
-# Simple state machine implementation of how a traffic light system works
+# Simple state machine implementation of a traffic light system in python
 
-def state_start_handler(iterations_to_run):
+def state_start_handler():
     print("-> START -> ", end="")
-    return ("RED", iterations_to_run)
+    return "RED"
 
-def state_red_handler(iterations_to_run):
+def state_red_handler():
     print("RED -> ", end="")
-    return ("RED_AMBER", iterations_to_run)
+    return "RED_AMBER"
 
-def state_red_amber_handler(iterations_to_run):
+def state_red_amber_handler():
     print("RED & AMBER -> ", end="")
-    return ("GREEN", iterations_to_run)
+    return "GREEN"
 
-def state_green_handler(iterations_to_run):
+def state_green_handler():
     print("GREEN -> ", end="")
-    return ("AMBER", iterations_to_run)
+    return "AMBER"
 
-def state_amber_handler(iterations_to_run):
+def state_amber_handler():
     print("AMBER -> ", end="")
-    iterations_to_run = iterations_to_run - 1
-    if iterations_to_run > 0:
-        return ("RED", iterations_to_run)
-    else:
-        return ("END", iterations_to_run)
+    return "END"
 
 
 class simpleFSM:
     def __init__(self) -> None:
-        self.handlers = {}
+        self.transitions = {}
         
-    def add_state(self, name, handler):
-        self.handlers[name] = handler
+    def add_state(self, state, transitionFunc):
+        self.transitions[state] = transitionFunc
         
-    def run(self, startingState, iterations_to_run):
-        handler = self.handlers[startingState]
+    def run(self, startState):
+        transitionState = self.transitions[startState]
         while True:
-            (newState, iterations_to_run) = handler(iterations_to_run)
+            newState = transitionState() # State transition function
             if newState == "END":
                 print("END")
                 break
-            handler = self.handlers[newState]
+            
+            # Update the state transition function to reflect what transitions does the new state support
+            transitionState = self.transitions[newState]
 
 
 fsm = simpleFSM()
-fsm.add_state("START", state_start_handler)
+fsm.add_state("START", state_start_handler) # Start state
 
 fsm.add_state("RED", state_red_handler)
 fsm.add_state("RED_AMBER", state_red_amber_handler)
 fsm.add_state("GREEN", state_green_handler)
 fsm.add_state("AMBER", state_amber_handler)
 
-iterations_to_run = 2
-
-fsm.run("START", iterations_to_run)
+# All possible state transitions added, we can now run the State Machine
+fsm.run("START")

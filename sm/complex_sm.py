@@ -1,4 +1,4 @@
-# A state machine that checks if a floating point number is valid
+# A finite state machine that checks if a floating point number is valid
 # states having * at the end denote valid end states i.e. MANTISSA*
 
 from collections import namedtuple
@@ -42,6 +42,7 @@ class complexFSM:
                 
             else:
                 if self.state.endswith('*'):
+                    print()
                     break
                 else:
                     print("INVALID END STATE")
@@ -51,12 +52,12 @@ class complexFSM:
 
 
 fsm = complexFSM()
-fsm.add_state("START", "0123456789", "SECOND_DIGIT_ONWARDS*")
-fsm.add_state("START", "-", "AFTER_MINUS")
-fsm.add_state("AFTER_MINUS", "0123456789",  "SECOND_DIGIT_ONWARDS*")
-fsm.add_state("SECOND_DIGIT_ONWARDS*", "0123456789", "SECOND_DIGIT_ONWARDS*")
-fsm.add_state("SECOND_DIGIT_ONWARDS*", ".", "AFTER_DOT")
-fsm.add_state("AFTER_DOT", "0123456789", "MANTISSA*")
+fsm.add_state("START", "0123456789", "WHOLE_NUMBER*")
+fsm.add_state("START", "-", "SIGN")
+fsm.add_state("SIGN", "0123456789",  "WHOLE_NUMBER*")
+fsm.add_state("WHOLE_NUMBER*", "0123456789", "WHOLE_NUMBER*")
+fsm.add_state("WHOLE_NUMBER*", ".", "POINT")
+fsm.add_state("POINT", "0123456789", "MANTISSA*")
 fsm.add_state("MANTISSA*", "0123456789", "MANTISSA*")
 
-fsm.run("-34.0ghdcws")
+fsm.run("-7.0")

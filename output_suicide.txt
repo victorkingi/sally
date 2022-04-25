@@ -1,0 +1,1025 @@
+created by github.com/ethereum/go-ethereum/miner.newWorker
+        github.com/ethereum/go-ethereum/miner/worker.go:288 +0x765
+
+goroutine 109 [select]:
+github.com/ethereum/go-ethereum/miner.(*worker).newWorkLoop(0xc000c7ed80, 0xb2d05e00)
+        github.com/ethereum/go-ethereum/miner/worker.go:450 +0x291
+created by github.com/ethereum/go-ethereum/miner.newWorker
+        github.com/ethereum/go-ethereum/miner/worker.go:289 +0x7ab
+
+goroutine 110 [select]:
+github.com/ethereum/go-ethereum/miner.(*worker).resultLoop(0xc000c7ed80)
+        github.com/ethereum/go-ethereum/miner/worker.go:681 +0xfd
+created by github.com/ethereum/go-ethereum/miner.newWorker
+        github.com/ethereum/go-ethereum/miner/worker.go:290 +0x7ea
+
+goroutine 111 [select]:
+github.com/ethereum/go-ethereum/miner.(*worker).taskLoop(0xc000c7ed80)
+        github.com/ethereum/go-ethereum/miner/worker.go:642 +0x112
+created by github.com/ethereum/go-ethereum/miner.newWorker
+        github.com/ethereum/go-ethereum/miner/worker.go:291 +0x82a
+
+goroutine 112 [select]:
+github.com/ethereum/go-ethereum/miner.(*Miner).update(0xc0001d8e00)
+        github.com/ethereum/go-ethereum/miner/miner.go:106 +0x21c
+created by github.com/ethereum/go-ethereum/miner.New
+        github.com/ethereum/go-ethereum/miner/miner.go:84 +0x238
+
+goroutine 113 [chan receive]:
+github.com/ethereum/go-ethereum/eth/gasprice.NewOracle.func1()
+        github.com/ethereum/go-ethereum/eth/gasprice/gasprice.go:122 +0x8d
+created by github.com/ethereum/go-ethereum/eth/gasprice.NewOracle
+        github.com/ethereum/go-ethereum/eth/gasprice/gasprice.go:120 +0x96d
+
+goroutine 146 [select]:
+github.com/ethereum/go-ethereum/eth/downloader.(*PublicDownloaderAPI).eventLoop(0xc0013dc160)
+        github.com/ethereum/go-ethereum/eth/downloader/api.go:63 +0x1f6
+created by github.com/ethereum/go-ethereum/eth/downloader.NewPublicDownloaderAPI
+        github.com/ethereum/go-ethereum/eth/downloader/api.go:49 +0x105
+
+goroutine 147 [select]:
+github.com/ethereum/go-ethereum/eth/filters.(*EventSystem).eventLoop(0xc0000ef550)
+        github.com/ethereum/go-ethereum/eth/filters/filter_system.go:459 +0x40c
+created by github.com/ethereum/go-ethereum/eth/filters.NewEventSystem
+        github.com/ethereum/go-ethereum/eth/filters/filter_system.go:138 +0x36a
+
+goroutine 148 [chan receive]:
+github.com/ethereum/go-ethereum/eth/filters.(*PublicFilterAPI).timeoutLoop(0xc000c4d900, 0x0?)
+        github.com/ethereum/go-ethereum/eth/filters/api.go:79 +0x9b
+created by github.com/ethereum/go-ethereum/eth/filters.NewPublicFilterAPI
+        github.com/ethereum/go-ethereum/eth/filters/api.go:67 +0xf9
+
+goroutine 149 [select]:
+github.com/syndtr/goleveldb/leveldb.(*session).refLoop(0xc0013f4b40)
+        github.com/syndtr/goleveldb@v1.0.1-0.20210819022825-2ae1ddf74ef7/leveldb/session_util.go:189 +0x59b
+created by github.com/syndtr/goleveldb/leveldb.newSession
+        github.com/syndtr/goleveldb@v1.0.1-0.20210819022825-2ae1ddf74ef7/leveldb/session.go:93 +0x2d9
+
+goroutine 225 [select]:
+github.com/ethereum/go-ethereum/p2p.(*Peer).run(0xc001495800)
+        github.com/ethereum/go-ethereum/p2p/peer.go:263 +0x23e
+github.com/ethereum/go-ethereum/p2p.(*Server).runPeer(0xc00023f400, 0xc001495800)
+        github.com/ethereum/go-ethereum/p2p/server.go:1038 +0x1b3
+created by github.com/ethereum/go-ethereum/p2p.(*Server).launchPeer
+        github.com/ethereum/go-ethereum/p2p/server.go:1021 +0xd9
+
+goroutine 339 [select]:
+github.com/ethereum/go-ethereum/p2p.(*Peer).pingLoop(0xc001495800)
+        github.com/ethereum/go-ethereum/p2p/peer.go:300 +0x11d
+created by github.com/ethereum/go-ethereum/p2p.(*Peer).run
+        github.com/ethereum/go-ethereum/p2p/peer.go:254 +0x130
+
+goroutine 342 [select]:
+github.com/ethereum/go-ethereum/eth/protocols/eth.(*Peer).broadcastBlocks(0xc0002092b0)
+        github.com/ethereum/go-ethereum/eth/protocols/eth/broadcast.go:44 +0xd9
+created by github.com/ethereum/go-ethereum/eth/protocols/eth.NewPeer
+        github.com/ethereum/go-ethereum/eth/protocols/eth/peer.go:116 +0x50f
+
+goroutine 610 [chan receive]:
+github.com/ethereum/go-ethereum/p2p/discover.(*UDPv4).findnode(0xc000c43c20, {0x58, 0xb3, 0xf6, 0x63, 0xd1, 0x8d, 0xba, 0xb8, 0x5, ...}, ...)
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:330 +0x285
+github.com/ethereum/go-ethereum/p2p/discover.(*UDPv4).newLookup.func1(0xb8ba8dd163f6b358?)
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:294 +0xa6
+github.com/ethereum/go-ethereum/p2p/discover.(*lookup).query(0xc005d5f950, 0xc002fb6630, 0xc002164fb0?)
+        github.com/ethereum/go-ethereum/p2p/discover/lookup.go:143 +0xd8
+created by github.com/ethereum/go-ethereum/p2p/discover.(*lookup).startQueries
+        github.com/ethereum/go-ethereum/p2p/discover/lookup.go:125 +0x27b
+
+goroutine 258 [select]:
+github.com/ethereum/go-ethereum/eth/protocols/eth.(*Peer).broadcastTransactions(0xc0002089c0)
+        github.com/ethereum/go-ethereum/eth/protocols/eth/broadcast.go:105 +0x185
+created by github.com/ethereum/go-ethereum/eth/protocols/eth.NewPeer
+        github.com/ethereum/go-ethereum/eth/protocols/eth/peer.go:117 +0x552
+
+goroutine 80 [select]:
+github.com/ethereum/go-ethereum/p2p.(*protoRW).ReadMsg(0xc000ae4320)
+        github.com/ethereum/go-ethereum/p2p/peer.go:472 +0xbb
+github.com/ethereum/go-ethereum/eth/protocols/snap.HandleMessage({0x17b6c10, 0xc000c7a200}, 0xc00049acc0)
+        github.com/ethereum/go-ethereum/eth/protocols/snap/handler.go:135 +0x84
+github.com/ethereum/go-ethereum/eth/protocols/snap.Handle({0x17b6c10, 0xc000c7a200}, 0xc00049acc0)
+        github.com/ethereum/go-ethereum/eth/protocols/snap/handler.go:123 +0x3d
+github.com/ethereum/go-ethereum/eth/protocols/snap.MakeProtocols.func2.1(0xc000c4d1c0?)
+        github.com/ethereum/go-ethereum/eth/protocols/snap/handler.go:103 +0x27
+github.com/ethereum/go-ethereum/eth.(*handler).runSnapExtension(0xc000c7a200, 0xc00049acc0, 0xc000641320)
+        github.com/ethereum/go-ethereum/eth/handler.go:480 +0x1c4
+github.com/ethereum/go-ethereum/eth.(*snapHandler).RunPeer(0x1?, 0xc000639ce0?, 0x17b1aa0?)
+        github.com/ethereum/go-ethereum/eth/handler_snap.go:33 +0x19
+github.com/ethereum/go-ethereum/eth/protocols/snap.MakeProtocols.func2(0x49e77e?, {0x17b1aa0?, 0xc000ae4320?})
+        github.com/ethereum/go-ethereum/eth/protocols/snap/handler.go:102 +0xa2
+github.com/ethereum/go-ethereum/p2p.(*Peer).startProtocols.func1()
+        github.com/ethereum/go-ethereum/p2p/peer.go:415 +0x8c
+created by github.com/ethereum/go-ethereum/p2p.(*Peer).startProtocols
+        github.com/ethereum/go-ethereum/p2p/peer.go:413 +0xae
+
+goroutine 171 [IO wait]:
+internal/poll.runtime_pollWait(0x7fe51e5f3b48, 0x72)
+        runtime/netpoll.go:302 +0x89
+internal/poll.(*pollDesc).wait(0xc0041ba480?, 0xc005924000?, 0x0)
+        internal/poll/fd_poll_runtime.go:83 +0x32
+internal/poll.(*pollDesc).waitRead(...)
+        internal/poll/fd_poll_runtime.go:88
+internal/poll.(*FD).Read(0xc0041ba480, {0xc005924000, 0x1000, 0x1000})
+        internal/poll/fd_unix.go:167 +0x25a
+net.(*netFD).Read(0xc0041ba480, {0xc005924000?, 0x4eed66?, 0x7fe51e5f3c30?})
+        net/fd_posix.go:55 +0x29
+net.(*conn).Read(0xc002859348, {0xc005924000?, 0x0?, 0x0?})
+        net/net.go:183 +0x45
+net/http.(*connReader).Read(0xc00590bc50, {0xc005924000, 0x1000, 0x1000})
+        net/http/server.go:780 +0x16d
+bufio.(*Reader).fill(0xc002fdd380)
+        bufio/bufio.go:106 +0x103
+bufio.(*Reader).Peek(0xc002fdd380, 0x4)
+        bufio/bufio.go:144 +0x5d
+net/http.(*conn).serve(0xc00023a6e0, {0x17b68c8, 0xc002f0aa20})
+        net/http/server.go:1992 +0x716
+created by net/http.(*Server).Serve
+        net/http/server.go:3071 +0x4db
+
+goroutine 168 [select]:
+net.(*pipe).read(0xc000c8e280, {0xc0014dc800, 0x200, 0x46b1b2?})
+        net/pipe.go:159 +0x14f
+net.(*pipe).Read(0x0?, {0xc0014dc800?, 0x0?, 0x0?})
+        net/pipe.go:142 +0x25
+encoding/json.(*Decoder).refill(0xc0026c8140)
+        encoding/json/stream.go:165 +0x17f
+encoding/json.(*Decoder).readValue(0xc0026c8140)
+        encoding/json/stream.go:140 +0xbb
+encoding/json.(*Decoder).Decode(0xc0026c8140, {0x1348d20, 0xc0014f4540})
+        encoding/json/stream.go:63 +0x78
+github.com/ethereum/go-ethereum/rpc.(*jsonCodec).readBatch(0xc00269a140)
+        github.com/ethereum/go-ethereum/rpc/json.go:214 +0x4d
+github.com/ethereum/go-ethereum/rpc.(*Client).read(0xc000c8e300, {0x17b9268, 0xc00269a140})
+        github.com/ethereum/go-ethereum/rpc/client.go:633 +0xb7
+created by github.com/ethereum/go-ethereum/rpc.(*Client).dispatch
+        github.com/ethereum/go-ethereum/rpc/client.go:557 +0x155
+
+goroutine 634 [chan receive]:
+github.com/ethereum/go-ethereum/eth/downloader.(*Downloader).spawnSync(0xc000168d80, {0xc006f54e00, 0x5, 0x4?})
+        github.com/ethereum/go-ethereum/eth/downloader/downloader.go:641 +0x148
+github.com/ethereum/go-ethereum/eth/downloader.(*Downloader).syncWithPeer(0xc000168d80, 0xc000327140, {0xa4, 0x6c, 0xdb, 0xe6, 0x2e, 0x36, 0x49, 0x45, ...}, ...)
+        github.com/ethereum/go-ethereum/eth/downloader/downloader.go:620 +0x128e
+github.com/ethereum/go-ethereum/eth/downloader.(*Downloader).synchronise(0xc000058eb0?, {0xc002e4f4c0, 0x40}, {0xa4, 0x6c, 0xdb, 0xe6, 0x2e, 0x36, 0x49, ...}, ...)
+        github.com/ethereum/go-ethereum/eth/downloader/downloader.go:435 +0x505
+github.com/ethereum/go-ethereum/eth/downloader.(*Downloader).LegacySync(0xc000168d80, {0xc002e4f4c0, 0x40}, {0xa4, 0x6c, 0xdb, 0xe6, 0x2e, 0x36, 0x49, ...}, ...)
+        github.com/ethereum/go-ethereum/eth/downloader/downloader.go:330 +0x65
+github.com/ethereum/go-ethereum/eth.(*handler).doSync(0xc000c7a200, 0xbd43f2?)
+        github.com/ethereum/go-ethereum/eth/sync.go:255 +0x225
+github.com/ethereum/go-ethereum/eth.(*chainSyncer).startSync.func1()
+        github.com/ethereum/go-ethereum/eth/sync.go:231 +0x29
+created by github.com/ethereum/go-ethereum/eth.(*chainSyncer).startSync
+        github.com/ethereum/go-ethereum/eth/sync.go:231 +0xaa
+
+goroutine 167 [select]:
+net.(*pipe).read(0xc00022a100, {0xc0014dc600, 0x200, 0x46b1b2?})
+        net/pipe.go:159 +0x14f
+net.(*pipe).Read(0x0?, {0xc0014dc600?, 0x818eb69b90f126a0?, 0x17ac900?})
+        net/pipe.go:142 +0x25
+encoding/json.(*Decoder).refill(0xc0026c8000)
+        encoding/json/stream.go:165 +0x17f
+encoding/json.(*Decoder).readValue(0xc0026c8000)
+        encoding/json/stream.go:140 +0xbb
+encoding/json.(*Decoder).Decode(0xc0026c8000, {0x1348d20, 0xc0014f4510})
+        encoding/json/stream.go:63 +0x78
+github.com/ethereum/go-ethereum/rpc.(*jsonCodec).readBatch(0xc00269a0a0)
+        github.com/ethereum/go-ethereum/rpc/json.go:214 +0x4d
+github.com/ethereum/go-ethereum/rpc.(*Client).read(0xc00032a180, {0x17b9268, 0xc00269a0a0})
+        github.com/ethereum/go-ethereum/rpc/client.go:633 +0xb7
+created by github.com/ethereum/go-ethereum/rpc.(*Client).dispatch
+        github.com/ethereum/go-ethereum/rpc/client.go:557 +0x155
+
+goroutine 166 [select]:
+github.com/ethereum/go-ethereum/rpc.(*Client).dispatch(0xc00032a180, {0x17b9268?, 0xc00269a0a0})
+        github.com/ethereum/go-ethereum/rpc/client.go:560 +0x2cc
+created by github.com/ethereum/go-ethereum/rpc.initClient
+        github.com/ethereum/go-ethereum/rpc/client.go:224 +0x30a
+
+goroutine 150 [select]:
+github.com/syndtr/goleveldb/leveldb.(*DB).compactionError(0xc0013f2380)
+        github.com/syndtr/goleveldb@v1.0.1-0.20210819022825-2ae1ddf74ef7/leveldb/db_compaction.go:91 +0x158
+created by github.com/syndtr/goleveldb/leveldb.openDB
+        github.com/syndtr/goleveldb@v1.0.1-0.20210819022825-2ae1ddf74ef7/leveldb/db.go:148 +0x4ea
+
+goroutine 151 [select]:
+github.com/syndtr/goleveldb/leveldb.(*DB).mpoolDrain(0xc0013f2380)
+        github.com/syndtr/goleveldb@v1.0.1-0.20210819022825-2ae1ddf74ef7/leveldb/db_state.go:101 +0xa8
+created by github.com/syndtr/goleveldb/leveldb.openDB
+        github.com/syndtr/goleveldb@v1.0.1-0.20210819022825-2ae1ddf74ef7/leveldb/db.go:149 +0x52a
+
+goroutine 152 [select]:
+github.com/syndtr/goleveldb/leveldb.(*DB).tCompaction(0xc0013f2380)
+        github.com/syndtr/goleveldb@v1.0.1-0.20210819022825-2ae1ddf74ef7/leveldb/db_compaction.go:836 +0x657
+created by github.com/syndtr/goleveldb/leveldb.openDB
+        github.com/syndtr/goleveldb@v1.0.1-0.20210819022825-2ae1ddf74ef7/leveldb/db.go:155 +0x598
+
+goroutine 153 [select]:
+github.com/syndtr/goleveldb/leveldb.(*DB).mCompaction(0xc0013f2380)
+        github.com/syndtr/goleveldb@v1.0.1-0.20210819022825-2ae1ddf74ef7/leveldb/db_compaction.go:773 +0x113
+created by github.com/syndtr/goleveldb/leveldb.openDB
+        github.com/syndtr/goleveldb@v1.0.1-0.20210819022825-2ae1ddf74ef7/leveldb/db.go:156 +0x5d6
+
+goroutine 662 [running]:
+        goroutine running on other thread; stack unavailable
+created by github.com/ethereum/go-ethereum/eth/downloader.(*Downloader).spawnSync
+        github.com/ethereum/go-ethereum/eth/downloader/downloader.go:630 +0x5f
+
+goroutine 155 [select]:
+github.com/ethereum/go-ethereum/p2p/nat.Map({0x17b71c0?, 0xc000206540}, 0xc000c3d680, {0x150fd36, 0x3}, 0x7662, 0x7662, {0x151a0c1, 0xc})
+        github.com/ethereum/go-ethereum/p2p/nat/nat.go:113 +0x3f8
+github.com/ethereum/go-ethereum/p2p.(*Server).setupListening.func1()
+        github.com/ethereum/go-ethereum/p2p/server.go:673 +0x5e
+created by github.com/ethereum/go-ethereum/p2p.(*Server).setupListening
+        github.com/ethereum/go-ethereum/p2p/server.go:672 +0x1b2
+
+goroutine 156 [IO wait]:
+internal/poll.runtime_pollWait(0x7fe51e5f4958, 0x72)
+        runtime/netpoll.go:302 +0x89
+internal/poll.(*pollDesc).wait(0xc000c15200?, 0xe0?, 0x0)
+        internal/poll/fd_poll_runtime.go:83 +0x32
+internal/poll.(*pollDesc).waitRead(...)
+        internal/poll/fd_poll_runtime.go:88
+internal/poll.(*FD).Accept(0xc000c15200)
+        internal/poll/fd_unix.go:614 +0x22c
+net.(*netFD).accept(0xc000c15200)
+        net/fd_unix.go:172 +0x35
+net.(*TCPListener).accept(0xc00153c390)
+        net/tcpsock_posix.go:139 +0x28
+net.(*TCPListener).Accept(0xc00153c390)
+        net/tcpsock.go:288 +0x3d
+github.com/ethereum/go-ethereum/p2p.(*Server).listenLoop(0xc00023f400)
+        github.com/ethereum/go-ethereum/p2p/server.go:862 +0x627
+created by github.com/ethereum/go-ethereum/p2p.(*Server).setupListening
+        github.com/ethereum/go-ethereum/p2p/server.go:680 +0x20a
+
+goroutine 159 [select]:
+github.com/ethereum/go-ethereum/p2p/nat.Map({0x17b71c0?, 0xc000206540}, 0xc000c3d680, {0x150fd48, 0x3}, 0x7662, 0x7662, {0x15212fd, 0x12})
+        github.com/ethereum/go-ethereum/p2p/nat/nat.go:113 +0x3f8
+github.com/ethereum/go-ethereum/p2p.(*Server).setupDiscovery.func1()
+        github.com/ethereum/go-ethereum/p2p/server.go:566 +0x5e
+created by github.com/ethereum/go-ethereum/p2p.(*Server).setupDiscovery
+        github.com/ethereum/go-ethereum/p2p/server.go:565 +0x35d
+
+goroutine 160 [select]:
+github.com/ethereum/go-ethereum/p2p/enode.(*DB).expirer(0xc001a166c0)
+        github.com/ethereum/go-ethereum/p2p/enode/nodedb.go:315 +0xd0
+created by github.com/ethereum/go-ethereum/p2p/enode.(*DB).ensureExpirer.func1
+        github.com/ethereum/go-ethereum/p2p/enode/nodedb.go:306 +0x5a
+
+goroutine 161 [select]:
+github.com/ethereum/go-ethereum/p2p/discover.(*Table).loop(0xc001a62000)
+        github.com/ethereum/go-ethereum/p2p/discover/table.go:236 +0x2fc
+created by github.com/ethereum/go-ethereum/p2p/discover.ListenV4
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:150 +0x385
+
+goroutine 242 [select]:
+github.com/ethereum/go-ethereum/p2p/discover.(*UDPv4).loop(0xc000c43c20)
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:445 +0x2e5
+created by github.com/ethereum/go-ethereum/p2p/discover.ListenV4
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:153 +0x3d6
+
+goroutine 243 [IO wait]:
+internal/poll.runtime_pollWait(0x7fe51e5f4868, 0x72)
+        runtime/netpoll.go:302 +0x89
+internal/poll.(*pollDesc).wait(0xc000c15280?, 0xc00276e000?, 0x0)
+        internal/poll/fd_poll_runtime.go:83 +0x32
+internal/poll.(*pollDesc).waitRead(...)
+        internal/poll/fd_poll_runtime.go:88
+internal/poll.(*FD).ReadFromInet6(0xc000c15280, {0xc00276e000, 0x500, 0x500}, 0xba10e1be3480c7ae?)
+        internal/poll/fd_unix.go:277 +0x1e5
+net.(*netFD).readFromInet6(0xc000c15280, {0xc00276e000?, 0x0?, 0x500?}, 0x1?)
+        net/fd_posix.go:72 +0x29
+net.(*UDPConn).readFrom(0xc000aebc00?, {0xc00276e000?, 0x0?, 0xe4928f1425076852?}, 0xc023682480)
+        net/udpsock_posix.go:59 +0x85
+net.(*UDPConn).readFromUDP(0xc001a4a0a8, {0xc00276e000?, 0xc023682450?, 0xc005feddc0?}, 0x40?)
+        net/udpsock.go:149 +0x31
+net.(*UDPConn).ReadFromUDP(0xc000c43c20?, {0xc00276e000, 0x500, 0x500})
+        net/udpsock.go:141 +0x50
+github.com/ethereum/go-ethereum/p2p/discover.(*UDPv4).readLoop(0xc000c43c20, 0x0)
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:522 +0xf4
+created by github.com/ethereum/go-ethereum/p2p/discover.ListenV4
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:154 +0x438
+
+goroutine 244 [select]:
+github.com/ethereum/go-ethereum/p2p/discover.(*lookup).advance(0xc005d5f950)
+        github.com/ethereum/go-ethereum/p2p/discover/lookup.go:70 +0xb6
+github.com/ethereum/go-ethereum/p2p/discover.(*lookupIterator).Next(0xc001a4e2c0)
+        github.com/ethereum/go-ethereum/p2p/discover/lookup.go:214 +0xaa
+github.com/ethereum/go-ethereum/p2p/enode.(*FairMix).runSource(0xc001a481e0, 0xc00153a2a0, 0xc001a17cc0)
+        github.com/ethereum/go-ethereum/p2p/enode/iter.go:279 +0xbb
+created by github.com/ethereum/go-ethereum/p2p/enode.(*FairMix).AddSource
+        github.com/ethereum/go-ethereum/p2p/enode/iter.go:180 +0x23f
+
+goroutine 245 [select]:
+github.com/ethereum/go-ethereum/p2p/enode.(*FairMix).Next(0xc001a481e0)
+        github.com/ethereum/go-ethereum/p2p/enode/iter.go:217 +0x170
+github.com/ethereum/go-ethereum/p2p.(*dialScheduler).readNodes(0xc0000e6c60, {0x17b4e40, 0xc001a481e0})
+        github.com/ethereum/go-ethereum/p2p/dial.go:322 +0x9f
+created by github.com/ethereum/go-ethereum/p2p.newDialScheduler
+        github.com/ethereum/go-ethereum/p2p/dial.go:180 +0x425
+
+goroutine 246 [select]:
+github.com/ethereum/go-ethereum/p2p.(*dialScheduler).loop(0xc0000e6c60, {0x17b4e40, 0xc001a481e0})
+        github.com/ethereum/go-ethereum/p2p/dial.go:243 +0x2ba
+created by github.com/ethereum/go-ethereum/p2p.newDialScheduler
+        github.com/ethereum/go-ethereum/p2p/dial.go:181 +0x49e
+
+goroutine 247 [select]:
+github.com/ethereum/go-ethereum/p2p.(*Server).run(0xc00023f400)
+        github.com/ethereum/go-ethereum/p2p/server.go:714 +0x4cc
+created by github.com/ethereum/go-ethereum/p2p.(*Server).Start
+        github.com/ethereum/go-ethereum/p2p/server.go:487 +0x46a
+
+goroutine 305 [select]:
+github.com/ethereum/go-ethereum/eth/protocols/eth.(*Peer).broadcastTransactions(0xc0003a9930)
+        github.com/ethereum/go-ethereum/eth/protocols/eth/broadcast.go:105 +0x185
+created by github.com/ethereum/go-ethereum/eth/protocols/eth.NewPeer
+        github.com/ethereum/go-ethereum/eth/protocols/eth/peer.go:117 +0x552
+
+goroutine 76 [select]:
+github.com/ethereum/go-ethereum/p2p.(*Peer).run(0xc000639ce0)
+        github.com/ethereum/go-ethereum/p2p/peer.go:263 +0x23e
+github.com/ethereum/go-ethereum/p2p.(*Server).runPeer(0xc00023f400, 0xc000639ce0)
+        github.com/ethereum/go-ethereum/p2p/server.go:1038 +0x1b3
+created by github.com/ethereum/go-ethereum/p2p.(*Server).launchPeer
+        github.com/ethereum/go-ethereum/p2p/server.go:1021 +0xd9
+
+goroutine 401 [chan receive]:
+github.com/ethereum/go-ethereum/p2p/discover.(*UDPv4).findnode(0xc000c43c20, {0x4e, 0x17, 0x4d, 0x84, 0x47, 0x6b, 0x5d, 0xed, 0x30, ...}, ...)
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:330 +0x285
+github.com/ethereum/go-ethereum/p2p/discover.(*UDPv4).newLookup.func1(0xed5d6b47844d174e?)
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:294 +0xa6
+github.com/ethereum/go-ethereum/p2p/discover.(*lookup).query(0xc005d5f950, 0xc002fb65a0, 0xc00592e180?)
+        github.com/ethereum/go-ethereum/p2p/discover/lookup.go:143 +0xd8
+created by github.com/ethereum/go-ethereum/p2p/discover.(*lookup).startQueries
+        github.com/ethereum/go-ethereum/p2p/discover/lookup.go:125 +0x27b
+
+goroutine 81 [select]:
+github.com/ethereum/go-ethereum/eth/protocols/eth.(*Peer).broadcastBlocks(0xc0002089c0)
+        github.com/ethereum/go-ethereum/eth/protocols/eth/broadcast.go:44 +0xd9
+created by github.com/ethereum/go-ethereum/eth/protocols/eth.NewPeer
+        github.com/ethereum/go-ethereum/eth/protocols/eth/peer.go:116 +0x50f
+
+goroutine 41 [sleep]:
+time.Sleep(0xdf8475800)
+        runtime/time.go:194 +0x12e
+github.com/ethereum/go-ethereum/cmd/utils.monitorFreeDiskSpace(0xc000293ef0?, {0xc000beb300, 0x3a}, 0x10000000)
+        github.com/ethereum/go-ethereum/cmd/utils/cmd.go:134 +0x57
+created by github.com/ethereum/go-ethereum/cmd/utils.StartNode.func1
+        github.com/ethereum/go-ethereum/cmd/utils/cmd.go:87 +0x28e
+
+goroutine 248 [IO wait]:
+internal/poll.runtime_pollWait(0x7fe51e5f42c8, 0x72)
+        runtime/netpoll.go:302 +0x89
+internal/poll.(*pollDesc).wait(0xc002cf9400?, 0xc00005cf00?, 0x0)
+        internal/poll/fd_poll_runtime.go:83 +0x32
+internal/poll.(*pollDesc).waitRead(...)
+        internal/poll/fd_poll_runtime.go:88
+internal/poll.(*FD).Accept(0xc002cf9400)
+        internal/poll/fd_unix.go:614 +0x22c
+net.(*netFD).accept(0xc002cf9400)
+        net/fd_unix.go:172 +0x35
+net.(*TCPListener).accept(0xc002cdef00)
+        net/tcpsock_posix.go:139 +0x28
+net.(*TCPListener).Accept(0xc002cdef00)
+        net/tcpsock.go:288 +0x3d
+net/http.(*Server).Serve(0xc002cc2460, {0x17b5800, 0xc002cdef00})
+        net/http/server.go:3039 +0x385
+created by github.com/ethereum/go-ethereum/node.(*httpServer).start
+        github.com/ethereum/go-ethereum/node/rpcstack.go:147 +0x290
+
+goroutine 249 [IO wait]:
+internal/poll.runtime_pollWait(0x7fe51e5f41d8, 0x72)
+        runtime/netpoll.go:302 +0x89
+internal/poll.(*pollDesc).wait(0xc002cf9480?, 0x0?, 0x0)
+        internal/poll/fd_poll_runtime.go:83 +0x32
+internal/poll.(*pollDesc).waitRead(...)
+        internal/poll/fd_poll_runtime.go:88
+internal/poll.(*FD).Accept(0xc002cf9480)
+        internal/poll/fd_unix.go:614 +0x22c
+net.(*netFD).accept(0xc002cf9480)
+        net/fd_unix.go:172 +0x35
+net.(*TCPListener).accept(0xc002cdef18)
+        net/tcpsock_posix.go:139 +0x28
+net.(*TCPListener).Accept(0xc002cdef18)
+        net/tcpsock.go:288 +0x3d
+net/http.(*Server).Serve(0xc002cc2620, {0x17b5800, 0xc002cdef18})
+        net/http/server.go:3039 +0x385
+created by github.com/ethereum/go-ethereum/node.(*httpServer).start
+        github.com/ethereum/go-ethereum/node/rpcstack.go:147 +0x290
+
+goroutine 250 [select]:
+github.com/ethereum/go-ethereum/eth/protocols/eth.StartENRUpdater.func1()
+        github.com/ethereum/go-ethereum/eth/protocols/eth/discovery.go:48 +0x11d
+created by github.com/ethereum/go-ethereum/eth/protocols/eth.StartENRUpdater
+        github.com/ethereum/go-ethereum/eth/protocols/eth/discovery.go:45 +0xda
+
+goroutine 251 [select]:
+github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers.func1()
+        github.com/ethereum/go-ethereum/eth/bloombits.go:50 +0xcc
+created by github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers
+        github.com/ethereum/go-ethereum/eth/bloombits.go:48 +0x34
+
+goroutine 252 [select]:
+github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers.func1()
+        github.com/ethereum/go-ethereum/eth/bloombits.go:50 +0xcc
+created by github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers
+        github.com/ethereum/go-ethereum/eth/bloombits.go:48 +0x34
+
+goroutine 253 [select]:
+github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers.func1()
+        github.com/ethereum/go-ethereum/eth/bloombits.go:50 +0xcc
+created by github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers
+        github.com/ethereum/go-ethereum/eth/bloombits.go:48 +0x34
+
+goroutine 254 [select]:
+github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers.func1()
+        github.com/ethereum/go-ethereum/eth/bloombits.go:50 +0xcc
+created by github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers
+        github.com/ethereum/go-ethereum/eth/bloombits.go:48 +0x34
+
+goroutine 255 [select]:
+github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers.func1()
+        github.com/ethereum/go-ethereum/eth/bloombits.go:50 +0xcc
+created by github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers
+        github.com/ethereum/go-ethereum/eth/bloombits.go:48 +0x34
+
+goroutine 256 [select]:
+github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers.func1()
+        github.com/ethereum/go-ethereum/eth/bloombits.go:50 +0xcc
+created by github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers
+        github.com/ethereum/go-ethereum/eth/bloombits.go:48 +0x34
+
+goroutine 257 [select]:
+github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers.func1()
+        github.com/ethereum/go-ethereum/eth/bloombits.go:50 +0xcc
+created by github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers
+        github.com/ethereum/go-ethereum/eth/bloombits.go:48 +0x34
+
+goroutine 274 [select]:
+github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers.func1()
+        github.com/ethereum/go-ethereum/eth/bloombits.go:50 +0xcc
+created by github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers
+        github.com/ethereum/go-ethereum/eth/bloombits.go:48 +0x34
+
+goroutine 275 [select]:
+github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers.func1()
+        github.com/ethereum/go-ethereum/eth/bloombits.go:50 +0xcc
+created by github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers
+        github.com/ethereum/go-ethereum/eth/bloombits.go:48 +0x34
+
+goroutine 276 [select]:
+github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers.func1()
+        github.com/ethereum/go-ethereum/eth/bloombits.go:50 +0xcc
+created by github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers
+        github.com/ethereum/go-ethereum/eth/bloombits.go:48 +0x34
+
+goroutine 277 [select]:
+github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers.func1()
+        github.com/ethereum/go-ethereum/eth/bloombits.go:50 +0xcc
+created by github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers
+        github.com/ethereum/go-ethereum/eth/bloombits.go:48 +0x34
+
+goroutine 278 [select]:
+github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers.func1()
+        github.com/ethereum/go-ethereum/eth/bloombits.go:50 +0xcc
+created by github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers
+        github.com/ethereum/go-ethereum/eth/bloombits.go:48 +0x34
+
+goroutine 279 [select]:
+github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers.func1()
+        github.com/ethereum/go-ethereum/eth/bloombits.go:50 +0xcc
+created by github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers
+        github.com/ethereum/go-ethereum/eth/bloombits.go:48 +0x34
+
+goroutine 280 [select]:
+github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers.func1()
+        github.com/ethereum/go-ethereum/eth/bloombits.go:50 +0xcc
+created by github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers
+        github.com/ethereum/go-ethereum/eth/bloombits.go:48 +0x34
+
+goroutine 281 [select]:
+github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers.func1()
+        github.com/ethereum/go-ethereum/eth/bloombits.go:50 +0xcc
+created by github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers
+        github.com/ethereum/go-ethereum/eth/bloombits.go:48 +0x34
+
+goroutine 282 [select]:
+github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers.func1()
+        github.com/ethereum/go-ethereum/eth/bloombits.go:50 +0xcc
+created by github.com/ethereum/go-ethereum/eth.(*Ethereum).startBloomHandlers
+        github.com/ethereum/go-ethereum/eth/bloombits.go:48 +0x34
+
+goroutine 283 [select]:
+github.com/ethereum/go-ethereum/internal/shutdowncheck.(*ShutdownTracker).Start.func1()
+        github.com/ethereum/go-ethereum/internal/shutdowncheck/shutdown_tracker.go:69 +0xee
+created by github.com/ethereum/go-ethereum/internal/shutdowncheck.(*ShutdownTracker).Start
+        github.com/ethereum/go-ethereum/internal/shutdowncheck/shutdown_tracker.go:65 +0x56
+
+goroutine 284 [select]:
+github.com/ethereum/go-ethereum/eth.(*handler).txBroadcastLoop(0xc000c7a200)
+        github.com/ethereum/go-ethereum/eth/handler.go:663 +0x118
+created by github.com/ethereum/go-ethereum/eth.(*handler).Start
+        github.com/ethereum/go-ethereum/eth/handler.go:529 +0xee
+
+goroutine 285 [chan receive]:
+github.com/ethereum/go-ethereum/eth.(*handler).minedBroadcastLoop(0xc000c7a200)
+        github.com/ethereum/go-ethereum/eth/handler.go:651 +0x8a
+created by github.com/ethereum/go-ethereum/eth.(*handler).Start
+        github.com/ethereum/go-ethereum/eth/handler.go:534 +0x19b
+
+goroutine 286 [select]:
+github.com/ethereum/go-ethereum/eth.(*chainSyncer).loop(0xc000c4d2c0)
+        github.com/ethereum/go-ethereum/eth/sync.go:121 +0x29a
+created by github.com/ethereum/go-ethereum/eth.(*handler).Start
+        github.com/ethereum/go-ethereum/eth/handler.go:538 +0x1f8
+
+goroutine 287 [chan receive]:
+github.com/ethereum/go-ethereum/cmd/utils.StartNode.func1()
+        github.com/ethereum/go-ethereum/cmd/utils/cmd.go:107 +0x327
+created by github.com/ethereum/go-ethereum/cmd/utils.StartNode
+        github.com/ethereum/go-ethereum/cmd/utils/cmd.go:75 +0xc5
+
+goroutine 636 [chan receive]:
+github.com/ethereum/go-ethereum/internal/ethapi.DoCall.func2()
+        github.com/ethereum/go-ethereum/internal/ethapi/api.go:926 +0x32
+created by github.com/ethereum/go-ethereum/internal/ethapi.DoCall
+        github.com/ethereum/go-ethereum/internal/ethapi/api.go:925 +0x434
+
+goroutine 592 [sleep]:
+time.Sleep(0x1dcd6500)
+        runtime/time.go:194 +0x12e
+github.com/ethereum/go-ethereum/p2p/discover.(*UDPv4).ensureBond(0xc000c43c20, {0x93, 0x33, 0xe8, 0xf5, 0x1c, 0x65, 0x5, 0x64, 0x9e, ...}, ...)
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:574 +0xda
+github.com/ethereum/go-ethereum/p2p/discover.(*UDPv4).findnode(0xc000c43c20, {0x93, 0x33, 0xe8, 0xf5, 0x1c, 0x65, 0x5, 0x64, 0x9e, ...}, ...)
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:302 +0x54
+github.com/ethereum/go-ethereum/p2p/discover.(*UDPv4).newLookup.func1(0x6405651cf5e83393?)
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:294 +0xa6
+github.com/ethereum/go-ethereum/p2p/discover.(*lookup).query(0xc0048eb830, 0xc002fb6120, 0xc000b727b0?)
+        github.com/ethereum/go-ethereum/p2p/discover/lookup.go:143 +0xd8
+created by github.com/ethereum/go-ethereum/p2p/discover.(*lookup).startQueries
+        github.com/ethereum/go-ethereum/p2p/discover/lookup.go:125 +0x27b
+
+goroutine 298 [select]:
+github.com/ethereum/go-ethereum/eth/protocols/eth.(*Peer).dispatcher(0xc0003a9040)
+        github.com/ethereum/go-ethereum/eth/protocols/eth/dispatcher.go:192 +0x16c
+created by github.com/ethereum/go-ethereum/eth/protocols/eth.NewPeer
+        github.com/ethereum/go-ethereum/eth/protocols/eth/peer.go:119 +0x5dc
+
+goroutine 300 [select]:
+github.com/ethereum/go-ethereum/p2p.(*Peer).pingLoop(0xc002e669c0)
+        github.com/ethereum/go-ethereum/p2p/peer.go:300 +0x11d
+created by github.com/ethereum/go-ethereum/p2p.(*Peer).run
+        github.com/ethereum/go-ethereum/p2p/peer.go:254 +0x130
+
+goroutine 301 [select]:
+github.com/ethereum/go-ethereum/p2p.(*protoRW).ReadMsg(0xc0002e4780)
+        github.com/ethereum/go-ethereum/p2p/peer.go:472 +0xbb
+github.com/ethereum/go-ethereum/eth/protocols/eth.handleMessage({0x17b8f98, 0xc000c7a200}, 0xc0003a9930)
+        github.com/ethereum/go-ethereum/eth/protocols/eth/handler.go:188 +0x88
+github.com/ethereum/go-ethereum/eth/protocols/eth.Handle({0x17b8f98, 0xc000c7a200}, 0xc0003a9930)
+        github.com/ethereum/go-ethereum/eth/protocols/eth/handler.go:154 +0x3d
+github.com/ethereum/go-ethereum/eth/protocols/eth.MakeProtocols.func1.1(0xc00130c5a0?)
+        github.com/ethereum/go-ethereum/eth/protocols/eth/handler.go:111 +0x27
+github.com/ethereum/go-ethereum/eth.(*handler).runEthPeer(0xc000c7a200, 0xc0003a9930, 0xc002e51080)
+        github.com/ethereum/go-ethereum/eth/handler.go:465 +0x115a
+github.com/ethereum/go-ethereum/eth.(*ethHandler).RunPeer(0x42?, 0xc002e669c0?, 0x17b1aa0?)
+        github.com/ethereum/go-ethereum/eth/handler_eth.go:41 +0x19
+github.com/ethereum/go-ethereum/eth/protocols/eth.MakeProtocols.func1(0x93?, {0x17b1aa0, 0xc0002e4780})
+        github.com/ethereum/go-ethereum/eth/protocols/eth/handler.go:110 +0x122
+github.com/ethereum/go-ethereum/p2p.(*Peer).startProtocols.func1()
+        github.com/ethereum/go-ethereum/p2p/peer.go:415 +0x8c
+created by github.com/ethereum/go-ethereum/p2p.(*Peer).startProtocols
+        github.com/ethereum/go-ethereum/p2p/peer.go:413 +0xae
+
+goroutine 302 [select]:
+github.com/ethereum/go-ethereum/p2p.(*protoRW).ReadMsg(0xc0002e48c0)
+        github.com/ethereum/go-ethereum/p2p/peer.go:472 +0xbb
+github.com/ethereum/go-ethereum/eth/protocols/snap.HandleMessage({0x17b6c10, 0xc000c7a200}, 0xc002461740)
+        github.com/ethereum/go-ethereum/eth/protocols/snap/handler.go:135 +0x84
+github.com/ethereum/go-ethereum/eth/protocols/snap.Handle({0x17b6c10, 0xc000c7a200}, 0xc002461740)
+        github.com/ethereum/go-ethereum/eth/protocols/snap/handler.go:123 +0x3d
+github.com/ethereum/go-ethereum/eth/protocols/snap.MakeProtocols.func2.1(0xc000c4d1c0?)
+        github.com/ethereum/go-ethereum/eth/protocols/snap/handler.go:103 +0x27
+github.com/ethereum/go-ethereum/eth.(*handler).runSnapExtension(0xc000c7a200, 0xc002461740, 0xc002e50fa8)
+        github.com/ethereum/go-ethereum/eth/handler.go:480 +0x1c4
+github.com/ethereum/go-ethereum/eth.(*snapHandler).RunPeer(0x1?, 0xc002e669c0?, 0x17b1aa0?)
+        github.com/ethereum/go-ethereum/eth/handler_snap.go:33 +0x19
+github.com/ethereum/go-ethereum/eth/protocols/snap.MakeProtocols.func2(0x49e77e?, {0x17b1aa0?, 0xc0002e48c0?})
+        github.com/ethereum/go-ethereum/eth/protocols/snap/handler.go:102 +0xa2
+github.com/ethereum/go-ethereum/p2p.(*Peer).startProtocols.func1()
+        github.com/ethereum/go-ethereum/p2p/peer.go:415 +0x8c
+created by github.com/ethereum/go-ethereum/p2p.(*Peer).startProtocols
+        github.com/ethereum/go-ethereum/p2p/peer.go:413 +0xae
+
+goroutine 306 [select]:
+github.com/ethereum/go-ethereum/eth/protocols/eth.(*Peer).announceTransactions(0xc0003a9930)
+        github.com/ethereum/go-ethereum/eth/protocols/eth/broadcast.go:172 +0x17d
+created by github.com/ethereum/go-ethereum/eth/protocols/eth.NewPeer
+        github.com/ethereum/go-ethereum/eth/protocols/eth/peer.go:118 +0x595
+
+goroutine 307 [select]:
+github.com/ethereum/go-ethereum/eth/protocols/eth.(*Peer).dispatcher(0xc0003a9930)
+        github.com/ethereum/go-ethereum/eth/protocols/eth/dispatcher.go:192 +0x16c
+created by github.com/ethereum/go-ethereum/eth/protocols/eth.NewPeer
+        github.com/ethereum/go-ethereum/eth/protocols/eth/peer.go:119 +0x5dc
+
+goroutine 313 [select]:
+github.com/ethereum/go-ethereum/rpc.(*Client).dispatch(0xc002112480, {0x17b9268?, 0xc00269a1e0})
+        github.com/ethereum/go-ethereum/rpc/client.go:560 +0x2cc
+created by github.com/ethereum/go-ethereum/rpc.initClient
+        github.com/ethereum/go-ethereum/rpc/client.go:224 +0x30a
+
+goroutine 314 [select]:
+net.(*pipe).read(0xc000c8e380, {0xc00004b801, 0x5ff, 0xc00268ef88?})
+        net/pipe.go:159 +0x14f
+net.(*pipe).Read(0xc00268ef88?, {0xc00004b801?, 0xc0043ca808?, 0x12888a0?})
+        net/pipe.go:142 +0x25
+encoding/json.(*Decoder).refill(0xc0026c8280)
+        encoding/json/stream.go:165 +0x17f
+encoding/json.(*Decoder).readValue(0xc0026c8280)
+        encoding/json/stream.go:140 +0xbb
+encoding/json.(*Decoder).Decode(0xc0026c8280, {0x1348d20, 0xc0043e2b88})
+        encoding/json/stream.go:63 +0x78
+github.com/ethereum/go-ethereum/rpc.(*jsonCodec).readBatch(0xc00269a1e0)
+        github.com/ethereum/go-ethereum/rpc/json.go:214 +0x4d
+github.com/ethereum/go-ethereum/rpc.(*Client).read(0xc002112480, {0x17b9268, 0xc00269a1e0})
+        github.com/ethereum/go-ethereum/rpc/client.go:633 +0xb7
+created by github.com/ethereum/go-ethereum/rpc.(*Client).dispatch
+        github.com/ethereum/go-ethereum/rpc/client.go:557 +0x155
+
+goroutine 341 [select]:
+github.com/ethereum/go-ethereum/p2p.(*protoRW).ReadMsg(0xc00014ad20)
+        github.com/ethereum/go-ethereum/p2p/peer.go:472 +0xbb
+github.com/ethereum/go-ethereum/eth/protocols/snap.HandleMessage({0x17b6c10, 0xc000c7a200}, 0xc000d28140)
+        github.com/ethereum/go-ethereum/eth/protocols/snap/handler.go:135 +0x84
+github.com/ethereum/go-ethereum/eth/protocols/snap.Handle({0x17b6c10, 0xc000c7a200}, 0xc000d28140)
+        github.com/ethereum/go-ethereum/eth/protocols/snap/handler.go:123 +0x3d
+github.com/ethereum/go-ethereum/eth/protocols/snap.MakeProtocols.func2.1(0xc000c4d1c0?)
+        github.com/ethereum/go-ethereum/eth/protocols/snap/handler.go:103 +0x27
+github.com/ethereum/go-ethereum/eth.(*handler).runSnapExtension(0xc000c7a200, 0xc000d28140, 0xc00000f0e0)
+        github.com/ethereum/go-ethereum/eth/handler.go:480 +0x1c4
+github.com/ethereum/go-ethereum/eth.(*snapHandler).RunPeer(0x1?, 0xc001495800?, 0x17b1aa0?)
+        github.com/ethereum/go-ethereum/eth/handler_snap.go:33 +0x19
+github.com/ethereum/go-ethereum/eth/protocols/snap.MakeProtocols.func2(0x49e77e?, {0x17b1aa0?, 0xc00014ad20?})
+        github.com/ethereum/go-ethereum/eth/protocols/snap/handler.go:102 +0xa2
+github.com/ethereum/go-ethereum/p2p.(*Peer).startProtocols.func1()
+        github.com/ethereum/go-ethereum/p2p/peer.go:415 +0x8c
+created by github.com/ethereum/go-ethereum/p2p.(*Peer).startProtocols
+        github.com/ethereum/go-ethereum/p2p/peer.go:413 +0xae
+
+goroutine 343 [select]:
+github.com/ethereum/go-ethereum/eth/protocols/eth.(*Peer).broadcastTransactions(0xc0002092b0)
+        github.com/ethereum/go-ethereum/eth/protocols/eth/broadcast.go:105 +0x185
+created by github.com/ethereum/go-ethereum/eth/protocols/eth.NewPeer
+        github.com/ethereum/go-ethereum/eth/protocols/eth/peer.go:117 +0x552
+
+goroutine 344 [select]:
+github.com/ethereum/go-ethereum/eth/protocols/eth.(*Peer).announceTransactions(0xc0002092b0)
+        github.com/ethereum/go-ethereum/eth/protocols/eth/broadcast.go:172 +0x17d
+created by github.com/ethereum/go-ethereum/eth/protocols/eth.NewPeer
+        github.com/ethereum/go-ethereum/eth/protocols/eth/peer.go:118 +0x595
+
+goroutine 345 [select]:
+github.com/ethereum/go-ethereum/eth/protocols/eth.(*Peer).dispatcher(0xc0002092b0)
+        github.com/ethereum/go-ethereum/eth/protocols/eth/dispatcher.go:192 +0x16c
+created by github.com/ethereum/go-ethereum/eth/protocols/eth.NewPeer
+        github.com/ethereum/go-ethereum/eth/protocols/eth/peer.go:119 +0x5dc
+
+goroutine 230 [select]:
+github.com/ethereum/go-ethereum/core/state.(*subfetcher).loop(0xc0031560b0)
+        github.com/ethereum/go-ethereum/core/state/trie_prefetcher.go:291 +0x2af
+created by github.com/ethereum/go-ethereum/core/state.newSubfetcher
+        github.com/ethereum/go-ethereum/core/state/trie_prefetcher.go:228 +0x1a5
+
+goroutine 231 [select]:
+github.com/ethereum/go-ethereum/core/state.(*subfetcher).loop(0xc003156160)
+        github.com/ethereum/go-ethereum/core/state/trie_prefetcher.go:291 +0x2af
+created by github.com/ethereum/go-ethereum/core/state.newSubfetcher
+        github.com/ethereum/go-ethereum/core/state/trie_prefetcher.go:228 +0x1a5
+
+goroutine 42 [chan receive]:
+github.com/ethereum/go-ethereum/rpc.(*Server).ServeCodec(0xc000205fb0, {0x17b9268?, 0xc00269a0a0}, 0x0?)
+        github.com/ethereum/go-ethereum/rpc/server.go:88 +0x165
+created by github.com/ethereum/go-ethereum/rpc.DialInProc.func1
+        github.com/ethereum/go-ethereum/rpc/inproc.go:29 +0xc5
+
+goroutine 43 [select]:
+github.com/ethereum/go-ethereum/rpc.(*Client).dispatch(0xc000c8e300, {0x17b9268?, 0xc00269a140})
+        github.com/ethereum/go-ethereum/rpc/client.go:560 +0x2cc
+created by github.com/ethereum/go-ethereum/rpc.initClient
+        github.com/ethereum/go-ethereum/rpc/client.go:224 +0x30a
+
+goroutine 44 [chan receive]:
+main.startNode.func1()
+        github.com/ethereum/go-ethereum/cmd/geth/main.go:372 +0x89
+created by main.startNode
+        github.com/ethereum/go-ethereum/cmd/geth/main.go:364 +0x18d
+
+goroutine 174 [IO wait]:
+internal/poll.runtime_pollWait(0x7fe51e5f3c38, 0x72)
+        runtime/netpoll.go:302 +0x89
+internal/poll.(*pollDesc).wait(0xc0041ba500?, 0xc005958000?, 0x0)
+        internal/poll/fd_poll_runtime.go:83 +0x32
+internal/poll.(*pollDesc).waitRead(...)
+        internal/poll/fd_poll_runtime.go:88
+internal/poll.(*FD).Read(0xc0041ba500, {0xc005958000, 0x1000, 0x1000})
+        internal/poll/fd_unix.go:167 +0x25a
+net.(*netFD).Read(0xc0041ba500, {0xc005958000?, 0x4eed66?, 0x7fe51e5f3d20?})
+        net/fd_posix.go:55 +0x29
+net.(*conn).Read(0xc0028593a8, {0xc005958000?, 0x0?, 0x0?})
+        net/net.go:183 +0x45
+net/http.(*connReader).Read(0xc00592e0c0, {0xc005958000, 0x1000, 0x1000})
+        net/http/server.go:780 +0x16d
+bufio.(*Reader).fill(0xc002fdd560)
+        bufio/bufio.go:106 +0x103
+bufio.(*Reader).Peek(0xc002fdd560, 0x4)
+        bufio/bufio.go:144 +0x5d
+net/http.(*conn).serve(0xc00023a8c0, {0x17b68c8, 0xc002f0aa20})
+        net/http/server.go:1992 +0x716
+created by net/http.(*Server).Serve
+        net/http/server.go:3071 +0x4db
+
+goroutine 46 [chan receive]:
+github.com/ethereum/go-ethereum/rpc.(*Server).ServeCodec(0xc000205fb0, {0x17b9268?, 0xc00269a1e0}, 0x0?)
+        github.com/ethereum/go-ethereum/rpc/server.go:88 +0x165
+created by github.com/ethereum/go-ethereum/rpc.DialInProc.func1
+        github.com/ethereum/go-ethereum/rpc/inproc.go:29 +0xc5
+
+goroutine 47 [select]:
+github.com/ethereum/go-ethereum/rpc.(*Client).dispatch(0xc000c8e480, {0x17b9268?, 0xc00269a280})
+        github.com/ethereum/go-ethereum/rpc/client.go:560 +0x2cc
+created by github.com/ethereum/go-ethereum/rpc.initClient
+        github.com/ethereum/go-ethereum/rpc/client.go:224 +0x30a
+
+goroutine 48 [select]:
+github.com/ethereum/go-ethereum/internal/jsre.(*JSRE).runEventLoop(0xc0014ccb00)
+        github.com/ethereum/go-ethereum/internal/jsre/jsre.go:174 +0x417
+created by github.com/ethereum/go-ethereum/internal/jsre.New
+        github.com/ethereum/go-ethereum/internal/jsre/jsre.go:80 +0x190
+
+goroutine 351 [select]:
+net.(*pipe).read(0xc000c8e400, {0xc0043d1001, 0xdff, 0xc00268ef90?})
+        net/pipe.go:159 +0x14f
+net.(*pipe).Read(0xc00268ef90?, {0xc0043d1001?, 0xc0043ca898?, 0x12888a0?})
+        net/pipe.go:142 +0x25
+encoding/json.(*Decoder).refill(0xc0026c83c0)
+        encoding/json/stream.go:165 +0x17f
+encoding/json.(*Decoder).readValue(0xc0026c83c0)
+        encoding/json/stream.go:140 +0xbb
+encoding/json.(*Decoder).Decode(0xc0026c83c0, {0x1348d20, 0xc0043e2c18})
+        encoding/json/stream.go:63 +0x78
+github.com/ethereum/go-ethereum/rpc.(*jsonCodec).readBatch(0xc00269a280)
+        github.com/ethereum/go-ethereum/rpc/json.go:214 +0x4d
+github.com/ethereum/go-ethereum/rpc.(*Client).read(0xc000c8e480, {0x17b9268, 0xc00269a280})
+        github.com/ethereum/go-ethereum/rpc/client.go:633 +0xb7
+created by github.com/ethereum/go-ethereum/rpc.(*Client).dispatch
+        github.com/ethereum/go-ethereum/rpc/client.go:557 +0x155
+
+goroutine 354 [select]:
+github.com/ethereum/go-ethereum/console.(*Console).interruptHandler(0xc00270e160)
+        github.com/ethereum/go-ethereum/console/console.go:378 +0x147
+created by github.com/ethereum/go-ethereum/console.New
+        github.com/ethereum/go-ethereum/console/console.go:123 +0x378
+
+goroutine 355 [chan receive]:
+github.com/ethereum/go-ethereum/node.(*Node).Wait(...)
+        github.com/ethereum/go-ethereum/node/node.go:533
+main.localConsole.func1()
+        github.com/ethereum/go-ethereum/cmd/geth/consolecmd.go:109 +0x2d
+created by main.localConsole
+        github.com/ethereum/go-ethereum/cmd/geth/consolecmd.go:108 +0x32e
+
+goroutine 374 [select]:
+github.com/peterh/liner.(*State).readNext(0xc00023cb40)
+        github.com/peterh/liner@v1.1.1-0.20190123174540-a2c9a5303de7/input.go:137 +0x134
+github.com/peterh/liner.(*State).PromptWithSuggestion(0xc00023cb40, {0x150f584, 0x2}, {0x0, 0x0}, 0x0)
+        github.com/peterh/liner@v1.1.1-0.20190123174540-a2c9a5303de7/line.go:650 +0x777
+github.com/peterh/liner.(*State).Prompt(...)
+        github.com/peterh/liner@v1.1.1-0.20190123174540-a2c9a5303de7/line.go:594
+github.com/ethereum/go-ethereum/console/prompt.(*terminalPrompter).PromptInput(0xc000205f20, {0x150f584, 0x2})
+        github.com/ethereum/go-ethereum/console/prompt/prompter.go:119 +0x15b
+github.com/ethereum/go-ethereum/console.(*Console).readLines(0xc00270e160, 0xc0001dae38?, 0xc004793a20?, 0xc002cc97b0?)
+        github.com/ethereum/go-ethereum/console/console.go:494 +0x7d
+created by github.com/ethereum/go-ethereum/console.(*Console).Interactive
+        github.com/ethereum/go-ethereum/console/console.go:430 +0x173
+
+goroutine 375 [syscall]:
+syscall.Syscall(0x0, 0x0, 0xc0004f4000, 0x1000)
+        syscall/asm_linux_amd64.s:20 +0x5
+syscall.read(0xc0000a0060?, {0xc0004f4000?, 0x5402?, 0xc00013e000?})
+        syscall/zsyscall_linux_amd64.go:696 +0x4d
+syscall.Read(...)
+        syscall/syscall_unix.go:188
+internal/poll.ignoringEINTRIO(...)
+        internal/poll/fd_unix.go:794
+internal/poll.(*FD).Read(0xc0000a0060?, {0xc0004f4000?, 0x1000?, 0x1000?})
+        internal/poll/fd_unix.go:163 +0x285
+os.(*File).read(...)
+        os/file_posix.go:31
+os.(*File).Read(0xc000010010, {0xc0004f4000?, 0x113f63d?, 0xc000205f20?})
+        os/file.go:119 +0x5e
+bufio.(*Reader).fill(0xc000200b40)
+        bufio/bufio.go:106 +0x103
+bufio.(*Reader).ReadRune(0xc000200b40)
+        bufio/bufio.go:299 +0x25
+github.com/peterh/liner.(*State).restartPrompt.func1()
+        github.com/peterh/liner@v1.1.1-0.20190123174540-a2c9a5303de7/input.go:94 +0x3a
+created by github.com/peterh/liner.(*State).restartPrompt
+        github.com/peterh/liner@v1.1.1-0.20190123174540-a2c9a5303de7/input.go:91 +0x8a
+
+goroutine 613 [chan receive]:
+github.com/ethereum/go-ethereum/p2p/discover.(*UDPv4).findnode(0xc000c43c20, {0xe7, 0x83, 0xbb, 0x9c, 0x23, 0xe, 0xe9, 0x78, 0x8, ...}, ...)
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:330 +0x285
+github.com/ethereum/go-ethereum/p2p/discover.(*UDPv4).newLookup.func1(0x78e90e239cbb83e7?)
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:294 +0xa6
+github.com/ethereum/go-ethereum/p2p/discover.(*lookup).query(0xc0048eb830, 0xc002fb61b0, 0x0?)
+        github.com/ethereum/go-ethereum/p2p/discover/lookup.go:143 +0xd8
+created by github.com/ethereum/go-ethereum/p2p/discover.(*lookup).startQueries
+        github.com/ethereum/go-ethereum/p2p/discover/lookup.go:125 +0x27b
+
+goroutine 564 [sleep]:
+time.Sleep(0x1dcd6500)
+        runtime/time.go:194 +0x12e
+github.com/ethereum/go-ethereum/p2p/discover.(*UDPv4).ensureBond(0xc000c43c20, {0x10, 0x7e, 0x51, 0x4, 0x9f, 0x3e, 0x5f, 0x15, 0xdc, ...}, ...)
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:574 +0xda
+github.com/ethereum/go-ethereum/p2p/discover.(*UDPv4).findnode(0xc000c43c20, {0x10, 0x7e, 0x51, 0x4, 0x9f, 0x3e, 0x5f, 0x15, 0xdc, ...}, ...)
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:302 +0x54
+github.com/ethereum/go-ethereum/p2p/discover.(*UDPv4).newLookup.func1(0x155f3e9f04517e10?)
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:294 +0xa6
+github.com/ethereum/go-ethereum/p2p/discover.(*lookup).query(0xc005d5f950, 0xc002fb6510, 0x6?)
+        github.com/ethereum/go-ethereum/p2p/discover/lookup.go:143 +0xd8
+created by github.com/ethereum/go-ethereum/p2p/discover.(*lookup).startQueries
+        github.com/ethereum/go-ethereum/p2p/discover/lookup.go:125 +0x27b
+
+goroutine 635 [chan receive]:
+github.com/ethereum/go-ethereum/p2p/discover.(*UDPv4).findnode(0xc000c43c20, {0x8e, 0x20, 0x93, 0x3d, 0xdb, 0x69, 0xca, 0x2f, 0x59, ...}, ...)
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:330 +0x285
+github.com/ethereum/go-ethereum/p2p/discover.(*UDPv4).newLookup.func1(0x2fca69db3d93208e?)
+        github.com/ethereum/go-ethereum/p2p/discover/v4_udp.go:294 +0xa6
+github.com/ethereum/go-ethereum/p2p/discover.(*lookup).query(0xc0048eb830, 0xc000c43dd0, 0xc000077fa8?)
+        github.com/ethereum/go-ethereum/p2p/discover/lookup.go:143 +0xd8
+created by github.com/ethereum/go-ethereum/p2p/discover.(*lookup).startQueries
+        github.com/ethereum/go-ethereum/p2p/discover/lookup.go:125 +0x27b
+
+goroutine 360 [IO wait]:
+internal/poll.runtime_pollWait(0x7fe51e5f3d28, 0x72)
+        runtime/netpoll.go:302 +0x89
+internal/poll.(*pollDesc).wait(0xc004589080?, 0xc004d85000?, 0x0)
+        internal/poll/fd_poll_runtime.go:83 +0x32
+internal/poll.(*pollDesc).waitRead(...)
+        internal/poll/fd_poll_runtime.go:88
+internal/poll.(*FD).Read(0xc004589080, {0xc004d85000, 0x1000, 0x1000})
+        internal/poll/fd_unix.go:167 +0x25a
+net.(*netFD).Read(0xc004589080, {0xc004d85000?, 0x4eed66?, 0x7fe51e5f3e10?})
+        net/fd_posix.go:55 +0x29
+net.(*conn).Read(0xc001a4ae70, {0xc004d85000?, 0x0?, 0x0?})
+        net/net.go:183 +0x45
+net/http.(*connReader).Read(0xc004d8f9e0, {0xc004d85000, 0x1000, 0x1000})
+        net/http/server.go:780 +0x16d
+bufio.(*Reader).fill(0xc004dda240)
+        bufio/bufio.go:106 +0x103
+bufio.(*Reader).Peek(0xc004dda240, 0x4)
+        bufio/bufio.go:144 +0x5d
+net/http.(*conn).serve(0xc0045979a0, {0x17b68c8, 0xc002f0aa20})
+        net/http/server.go:1992 +0x716
+created by net/http.(*Server).Serve
+        net/http/server.go:3071 +0x4db
+
+goroutine 443 [IO wait]:
+internal/poll.runtime_pollWait(0x7fe51e5f40e8, 0x72)
+        runtime/netpoll.go:302 +0x89
+internal/poll.(*pollDesc).wait(0xc004790a80?, 0xc005874000?, 0x0)
+        internal/poll/fd_poll_runtime.go:83 +0x32
+internal/poll.(*pollDesc).waitRead(...)
+        internal/poll/fd_poll_runtime.go:88
+internal/poll.(*FD).Read(0xc004790a80, {0xc005874000, 0x1000, 0x1000})
+        internal/poll/fd_unix.go:167 +0x25a
+net.(*netFD).Read(0xc004790a80, {0xc005874000?, 0x4eed66?, 0x7fe51e5f41d0?})
+        net/fd_posix.go:55 +0x29
+net.(*conn).Read(0xc0056fa190, {0xc005874000?, 0x0?, 0x0?})
+        net/net.go:183 +0x45
+net/http.(*connReader).Read(0xc00585e180, {0xc005874000, 0x1000, 0x1000})
+        net/http/server.go:780 +0x16d
+bufio.(*Reader).fill(0xc0043c7a40)
+        bufio/bufio.go:106 +0x103
+bufio.(*Reader).Peek(0xc0043c7a40, 0x4)
+        bufio/bufio.go:144 +0x5d
+net/http.(*conn).serve(0xc0047a08c0, {0x17b68c8, 0xc002f0aa20})
+        net/http/server.go:1992 +0x716
+created by net/http.(*Server).Serve
+        net/http/server.go:3071 +0x4db
+
+goroutine 442 [IO wait]:
+internal/poll.runtime_pollWait(0x7fe51e5f3ff8, 0x72)
+        runtime/netpoll.go:302 +0x89
+internal/poll.(*pollDesc).wait(0xc004790a00?, 0xc005872000?, 0x0)
+        internal/poll/fd_poll_runtime.go:83 +0x32
+internal/poll.(*pollDesc).waitRead(...)
+        internal/poll/fd_poll_runtime.go:88
+internal/poll.(*FD).Read(0xc004790a00, {0xc005872000, 0x1000, 0x1000})
+        internal/poll/fd_unix.go:167 +0x25a
+net.(*netFD).Read(0xc004790a00, {0xc005872000?, 0x4eed66?, 0x7fe51e5f40e0?})
+        net/fd_posix.go:55 +0x29
+net.(*conn).Read(0xc0056fa188, {0xc005872000?, 0x0?, 0x0?})
+        net/net.go:183 +0x45
+net/http.(*connReader).Read(0xc00585e0c0, {0xc005872000, 0x1000, 0x1000})
+        net/http/server.go:780 +0x16d
+bufio.(*Reader).fill(0xc0043c79e0)
+        bufio/bufio.go:106 +0x103
+bufio.(*Reader).Peek(0xc0043c79e0, 0x4)
+        bufio/bufio.go:144 +0x5d
+net/http.(*conn).serve(0xc0047a0820, {0x17b68c8, 0xc002f0aa20})
+        net/http/server.go:1992 +0x716
+created by net/http.(*Server).Serve
+        net/http/server.go:3071 +0x4db
+
+goroutine 175 [semacquire]:
+sync.runtime_Semacquire(0x0?)
+        runtime/sema.go:56 +0x25
+sync.(*WaitGroup).Wait(0xc005e96d80?)
+        sync/waitgroup.go:136 +0x52
+github.com/ethereum/go-ethereum/rpc.(*handler).close(0xc005e96d80, {0x17abd20, 0xc00007c090}, 0xc005e99c38?)
+        github.com/ethereum/go-ethereum/rpc/handler.go:154 +0x38
+github.com/ethereum/go-ethereum/rpc.(*Server).serveSingleRequest(0xc002cbf830, {0x17b68c8, 0xc005eb4060}, {0x17b9268?, 0xc005e91680})
+        github.com/ethereum/go-ethereum/rpc/server.go:117 +0x1ed
+github.com/ethereum/go-ethereum/rpc.(*Server).ServeHTTP(0xc0000efe40?, {0x17b4db0, 0xc005eb2500}, 0xc005de2500)
+        github.com/ethereum/go-ethereum/rpc/http.go:263 +0x38d
+github.com/rs/cors.(*Cors).Handler.func1({0x17b4db0, 0xc005eb2500}, 0xc005de2500)
+        github.com/rs/cors@v1.7.0/cors.go:219 +0x1bd
+net/http.HandlerFunc.ServeHTTP(0xc005df9041?, {0x17b4db0?, 0xc005eb2500?}, 0x42ae27?)
+        net/http/server.go:2084 +0x2f
+github.com/ethereum/go-ethereum/node.(*virtualHostHandler).ServeHTTP(0xc002cdee58, {0x17b4db0, 0xc005eb2500}, 0xc005de2500)
+        github.com/ethereum/go-ethereum/node/rpcstack.go:429 +0x173
+github.com/ethereum/go-ethereum/node.newGzipHandler.func1({0x17b5a10?, 0xc005e875e0}, 0xc005de2500)
+        github.com/ethereum/go-ethereum/node/rpcstack.go:481 +0x28c
+net/http.HandlerFunc.ServeHTTP(0x6fc23ac00?, {0x17b5a10?, 0xc005e875e0?}, 0x2217f60?)
+        net/http/server.go:2084 +0x2f
+github.com/ethereum/go-ethereum/node.(*httpServer).ServeHTTP(0xc00021a340, {0x17b5a10?, 0xc005e875e0}, 0xc005de2500)
+        github.com/ethereum/go-ethereum/node/rpcstack.go:208 +0x26e
+net/http.serverHandler.ServeHTTP({0x17b2518?}, {0x17b5a10, 0xc005e875e0}, 0xc005de2500)
+        net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00023aa00, {0x17b68c8, 0xc002f0aa20})
+        net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+        net/http/server.go:3071 +0x4db
+
+goroutine 556 [IO wait]:
+internal/poll.runtime_pollWait(0x7fe51e5f3e18, 0x72)
+        runtime/netpoll.go:302 +0x89
+internal/poll.(*pollDesc).wait(0xc0041ba580?, 0xc00592e191?, 0x0)
+        internal/poll/fd_poll_runtime.go:83 +0x32
+internal/poll.(*pollDesc).waitRead(...)
+        internal/poll/fd_poll_runtime.go:88
+internal/poll.(*FD).Read(0xc0041ba580, {0xc00592e191, 0x1, 0x1})
+        internal/poll/fd_unix.go:167 +0x25a
+net.(*netFD).Read(0xc0041ba580, {0xc00592e191?, 0xd41cd5912c8bdcff?, 0x42ae27?})
+        net/fd_posix.go:55 +0x29
+net.(*conn).Read(0xc0028593c8, {0xc00592e191?, 0xc005e24c00?, 0xc005d5e990?})
+        net/net.go:183 +0x45
+net/http.(*connReader).backgroundRead(0xc00592e180)
+        net/http/server.go:672 +0x3f
+created by net/http.(*connReader).startBackgroundRead
+        net/http/server.go:668 +0xca
+
+goroutine 662 [running]:
+runtime.throw({0x1525d52?, 0xc023b60ea0?})
+        runtime/panic.go:992 +0x71 fp=0xc023730ff8 sp=0xc023730fc8 pc=0x453a31
+runtime.mapassign_faststr(0x1332280, 0xc0001f4cc0, {0xc023b60ea0, 0x2a})
+        runtime/map_faststr.go:295 +0x38b fp=0xc023731060 sp=0xc023730ff8 pc=0x430a6b
+github.com/ethereum/go-ethereum/core/vm.opSelfdestruct(0xc0047a6d80?, 0xc005beadc0, 0xc023b371e8)
+        github.com/ethereum/go-ethereum/core/vm/instructions.go:838 +0x2c5 fp=0xc023731228 sp=0xc023731060 pc=0x966ac5
+github.com/ethereum/go-ethereum/core/vm.(*EVMInterpreter).Run(0xc005beadc0, 0xc023d089c0, {0x0, 0x0, 0x0}, 0x0)
+        github.com/ethereum/go-ethereum/core/vm/interpreter.go:235 +0x922 fp=0xc0237314d8 sp=0xc023731228 pc=0x9685e2
+github.com/ethereum/go-ethereum/core/vm.(*EVM).create(0xc0047a6d80, {0x17ac440, 0xc0043ef440}, 0xc023731718, 0x239918, 0x42aac5?, {0x28, 0x42, 0x8d, 0xd0, ...}, ...)
+        github.com/ethereum/go-ethereum/core/vm/evm.go:453 +0x79d fp=0xc023731660 sp=0xc0237314d8 pc=0x95a33d
+github.com/ethereum/go-ethereum/core/vm.(*EVM).Create(0xc0047a6d80, {0x17ac440, 0xc0043ef440}, {0xc023d12a00, 0x26d, 0x26d}, 0x8d064ece2b1c0089?, 0x6fd3f7380d10ad19?)
+        github.com/ethereum/go-ethereum/core/vm/evm.go:501 +0x1cf fp=0xc023731760 sp=0xc023731660 pc=0x95a9ef
+github.com/ethereum/go-ethereum/core/vm.opCreate(0xc005bc0ff0?, 0xc005beadc0, 0xc005bfaaf8)
+        github.com/ethereum/go-ethereum/core/vm/instructions.go:604 +0x3cb fp=0xc023731978 sp=0xc023731760 pc=0x96334b
+github.com/ethereum/go-ethereum/core/vm.(*EVMInterpreter).Run(0xc005beadc0, 0xc0043ef440, {0xc005cc99e0, 0x24, 0x24}, 0x0)
+        github.com/ethereum/go-ethereum/core/vm/interpreter.go:235 +0x922 fp=0xc023731c28 sp=0xc023731978 pc=0x9685e2
+github.com/ethereum/go-ethereum/core/vm.(*EVM).Call(0xc0047a6d80, {0x17af9a0, 0xc005837518}, {0x88, 0x7c, 0x4d, 0xf0, 0x57, 0xb8, 0x8c, ...}, ...)
+        github.com/ethereum/go-ethereum/core/vm/evm.go:228 +0xbc5 fp=0xc023731e30 sp=0xc023731c28 pc=0x957ac5
+github.com/ethereum/go-ethereum/core.(*StateTransition).TransitionDb(0xc005bd1400)
+        github.com/ethereum/go-ethereum/core/state_transition.go:333 +0x779 fp=0xc0237320a0 sp=0xc023731e30 pc=0x9ab759
+github.com/ethereum/go-ethereum/core.ApplyMessage(0x14c9f80?, {0x17bd650?, 0xc005bf2630?}, 0xc005bf5300?)
+        github.com/ethereum/go-ethereum/core/state_transition.go:181 +0x2a fp=0xc0237320d0 sp=0xc0237320a0 pc=0x9a9d4a
+github.com/ethereum/go-ethereum/core.applyTransaction({0xc0058374d0, {0x18, 0xfa, 0x63, 0x5d, 0xf2, 0x9b, 0xeb, 0x9d, 0x9b, ...}, ...}, ...)
+        github.com/ethereum/go-ethereum/core/state_processor.go:101 +0x1c6 fp=0xc023732500 sp=0xc0237320d0 pc=0x9a8f86
+github.com/ethereum/go-ethereum/core.(*StateProcessor).Process(0xc00012e2a0, 0xc0048eb950, 0xc00584f380, {0x0, {0x0, 0x0}, 0x0, 0x0, 0x0, {0x0, ...}})
+        github.com/ethereum/go-ethereum/core/state_processor.go:82 +0x898 fp=0xc023732990 sp=0xc023732500 pc=0x9a8778
+github.com/ethereum/go-ethereum/core.(*BlockChain).insertChain(0xc0001ca800, {0xc005ff0e88?, 0x3, 0x3}, 0x1, 0x1)
+        github.com/ethereum/go-ethereum/core/blockchain.go:1607 +0x1ea4 fp=0xc0237336f8 sp=0xc023732990 pc=0x98c0c4
+github.com/ethereum/go-ethereum/core.(*BlockChain).InsertChain(0xc0001ca800, {0xc005ff0e88?, 0x3, 0x3})
+        github.com/ethereum/go-ethereum/core/blockchain.go:1378 +0xb51 fp=0xc023733a40 sp=0xc0237336f8 pc=0x98a031
+github.com/ethereum/go-ethereum/eth/downloader.(*Downloader).importBlockResults(0xc000168d80, {0xc005ff0e70, 0x3, 0xd?})
+        github.com/ethereum/go-ethereum/eth/downloader/downloader.go:1545 +0x45a fp=0xc023733d58 sp=0xc023733a40 pc=0xaac35a
+github.com/ethereum/go-ethereum/eth/downloader.(*Downloader).processFullSyncContent(0xc000168d80, 0x0, 0x0)
+        github.com/ethereum/go-ethereum/eth/downloader/downloader.go:1512 +0x17d fp=0xc023733f60 sp=0xc023733d58 pc=0xaab8fd
+github.com/ethereum/go-ethereum/eth/downloader.(*Downloader).syncWithPeer.func9()
+        github.com/ethereum/go-ethereum/eth/downloader/downloader.go:618 +0x25 fp=0xc023733f88 sp=0xc023733f60 pc=0xaa4325
+github.com/ethereum/go-ethereum/eth/downloader.(*Downloader).spawnSync.func1()
+        github.com/ethereum/go-ethereum/eth/downloader/downloader.go:630 +0x70 fp=0xc023733fe0 sp=0xc023733f88 pc=0xaa48b0
+runtime.goexit()
+        runtime/asm_amd64.s:1571 +0x1 fp=0xc023733fe8 sp=0xc023733fe0 pc=0x486ac1
+created by github.com/ethereum/go-ethereum/eth/downloader.(*Downloader).spawnSync
+        github.com/ethereum/go-ethereum/eth/downloader/downloader.go:630 +0x5f
