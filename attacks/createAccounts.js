@@ -88,5 +88,5 @@ function generateAddresses(n) {
         //file written successfully
     });
 }
-//generateAddresses(50);
+generateAddresses(50);
 
