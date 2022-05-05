@@ -14,3 +14,8 @@ Our simple RSM is programmable, meaning that it can perform some computation giv
 The function `runCode()` in `client.go` file handles opcode executions. For example, typing `/msg PUSH34;PUSH12;ADD;MUL` will perform the specified operations on the stack. Contrary to normal stacks, this stack always contains the current state as the first value.
 <br />
 Other commands accepted include `/log` which will print out all execution messages and their timestamps in the lifetime of the program, `/state` will print out the current state which is a number, `/nodes` will print out all connected nodes with their id and remote address and `/quit` safely exits a node by deleting itself from the server node table.
+
+## How to run
+1. While in this directory, type `go mod download` to download the dependencies. If an error occurs due to `GO111MODULE` being off, turn it on using `export GO111MODULE=on` first before running `go mod download`.
+2. Run `go run *.go` to start the server or rather `go build .` to generate an executable then run `./rsm`.
+3. In multiple other terminals, run `telnet localhost 8888`, which will start an instance of a node.
