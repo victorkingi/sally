@@ -20,13 +20,13 @@ class complexFSM:
         self.tok_next[name].append(tok_next_t(tokens, next_state))
     
         
-    def run(self, cargo):
+    def run(self, input):
         print("->", self.state, "-> ", end="")
         while True:
-            if len(cargo) > 0:
+            if len(input) > 0:
                 # Get next char & remove it from string
-                token = cargo[0]
-                cargo = cargo[1:]
+                token = input[0]
+                input = input[1:]
                 found = False
                 for tn in self.tok_next[self.state]:
                     if token in tn.tokens:
