@@ -1,3 +1,4 @@
+# Credit to Gary Explains, https://www.youtube.com/watch?v=2OiWs-h_M3A
 # A finite state machine that checks if a floating point number is valid
 # states having * at the end denote valid end states i.e. MANTISSA*
 

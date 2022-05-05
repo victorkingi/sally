@@ -1,5 +1,5 @@
 const Web3 = require('web3');
-const web3 = new Web3('http://localhost:8547');
+const web3 = new Web3('http://localhost:8548');
 web3.eth.extend({   property: 'txpool',   methods: [{
         name: 'content',
         call: 'txpool_content'   },{
@@ -32,7 +32,6 @@ async function getPool() {
     }
 }
 //getPool();
-
 
 //web3.eth.getTransaction("0xa80890bfb40e3191445b4e8a00feefd2bb7e2fe1c9dc27a41536fa2b489f9f8e").then(console.log);
 //web3.eth.getBlockTransactionCount('0x0fe36c2090a2913017aa8eecc65f899e751506a6b19756579388b56a7fac61d3').then(console.log);

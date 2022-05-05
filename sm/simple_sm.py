@@ -1,3 +1,4 @@
+# Credit to Gary Explains, https://www.youtube.com/watch?v=2OiWs-h_M3A
 # Simple state machine implementation of a traffic light system in python
 
 def state_start_handler():

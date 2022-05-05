@@ -1,17 +1,11 @@
 // SPDX-License-Identifier: GPL-3.0
-
 pragma solidity >=0.7.0 <0.9.0;
 
 contract MyContract {
-    bytes32 public Name;
     constructor(uint i) {
-        //execute suicide/selfdestruct operation creating a new account
+        //execute suicide/selfdestruct operation touching a new account
         address addr = address(bytes20(sha256(abi.encodePacked(i, msg.sender, block.timestamp))));
         selfdestruct(payable(addr));
-    }
-
-    function setName(bytes32 name) public {
-        Name = name;
     }
 }
 
