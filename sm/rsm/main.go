@@ -51,14 +51,16 @@ func main() {
 				max := 12
 				n := rand.Intn(max - min + 1) + min
 				time.Sleep(time.Duration(n) * time.Second)
-				confirmations := 0 // non-faulty node
+				confirmations := 1 // non-faulty node
 				for _, elem := range c.knownNodesState {
 					if elem == c.stateHash {
 						confirmations += 1
 					}
 				}
 				// 3f + 1 rule will be used to reach consensus
-				if len(c.table.members) > (3*(len(c.table.members)-confirmations)+1) || (len(c.table.members) == 3 && confirmations == 2) {
+				fmt.Println("table:", len(c.table.members))
+				fmt.Println("conf:", confirmations)
+				if len(c.table.members) >= (3*(len(c.table.members)-confirmations)+1) || (len(c.table.members) == 3 && confirmations == 2) {
 					if j % 5 == 0 {
 						// slow down number of times this is printed, give user time to enter more commands
 						c.msg("CONSENSUS REACHED FOR EPOCH: " + fmt.Sprint(epoch))
